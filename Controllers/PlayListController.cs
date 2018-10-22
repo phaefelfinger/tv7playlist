@@ -8,7 +8,7 @@ namespace tv7playlist.Controllers
 {
     [Route("api/playlist")]
     [ApiController]
-    public class PlayListTV7Controller : ControllerBase
+    public class PlayListController : ControllerBase
     {
         private const string Tv7OriginUrl = "https://api.init7.net/tvchannels.m3u";
         private const string UdpxyRootUrl = "http://tv1.haefelfinger.net:4022/udp";
