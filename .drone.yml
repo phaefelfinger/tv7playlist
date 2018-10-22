@@ -1,0 +1,11 @@
+pipeline:
+  docker:
+    image: plugins/docker
+    repo: phaefelfinger/tv7playlist
+    tags:
+      - latest
+    secrets: [ docker_username, docker_password ]
+    debug: true
+    when:
+      event: push
+      branch: master
