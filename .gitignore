@@ -38,13 +38,6 @@ x64/
 *.vssscc
 .builds
 
-# Visual C++ cache files
-ipch/
-*.aps
-*.ncb
-*.opensdf
-*.sdf
-
 # Visual Studio profiler
 *.psess
 *.vsp
@@ -55,6 +48,7 @@ ipch/
 
 # ReSharper is a .NET coding add-in
 _ReSharper*
+.idea/
 
 # NCrunch
 *.ncrunch*
