@@ -11,7 +11,7 @@ namespace tv7playlist.Controllers
     public class PlayListController : ControllerBase
     {
         private const string Tv7OriginUrl = "https://api.init7.net/tvchannels.m3u";
-        private const string UdpxyRootUrl = "http://tv1.haefelfinger.net:4022/udp";
+        private const string UdpxyRootUrl = "http://192.168.15.2:4022/udp";
 
         private static readonly Regex MulticastRegex = new Regex(@"(udp\:\/\/@)([0-9.:]+)",
             RegexOptions.Compiled | RegexOptions.Singleline | RegexOptions.IgnoreCase);
