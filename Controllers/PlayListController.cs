@@ -5,6 +5,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 
 namespace tv7playlist.Controllers
 {
@@ -14,16 +15,23 @@ namespace tv7playlist.Controllers
     {
         private const string PlayListContentType = "audio/mpegurl";
 
+        /// <summary>
+        ///     This is the regex used to build up the proxy url.
+        ///     The first part (udp://@) is ignored while generating the final url
+        ///     The multicast address is expected to be a ip-address with a port and is reused
+        /// </summary>
         private static readonly Regex MultiCastRegex = new Regex(@"(udp\:\/\/@)([0-9.:]+)",
             RegexOptions.Compiled | RegexOptions.Singleline | RegexOptions.IgnoreCase);
 
         private readonly string _downloadFileName;
+        private readonly ILogger<PlayListController> _logger;
         private readonly string _proxyUrl;
 
         private readonly string _tv7Url;
 
-        public PlayListController(IConfiguration configuration)
+        public PlayListController(ILogger<PlayListController> logger, IConfiguration configuration)
         {
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
             if (configuration == null) throw new ArgumentNullException(nameof(configuration));
 
             var appConfig = configuration.Get<AppConfig>();
@@ -34,13 +42,25 @@ namespace tv7playlist.Controllers
         }
 
         [HttpGet]
-        public async Task<FileStreamResult> Get()
+        public async Task<ActionResult> Get()
         {
             using (var httpClient = new HttpClient())
             {
+                _logger.LogInformation(LoggingEvents.Playlist, "Downloading playlist from {tv7url}", _tv7Url);
                 var tv7Response = await httpClient.GetAsync(_tv7Url);
 
+                if (!tv7Response.IsSuccessStatusCode)
+                {
+                    _logger.LogWarning(LoggingEvents.PlaylistNotFound,
+                        "Could not download playlist from {tv7url}. The StatusCode was: {StatusCode}", _tv7Url,
+                        tv7Response.StatusCode);
+                    return StatusCode((int) tv7Response.StatusCode);
+                }
+
                 var modifiedPlaylist = await BuildProxyPlaylist(tv7Response);
+
+                _logger.LogInformation(LoggingEvents.Playlist, "Sending updated playlist {filename}",
+                    _downloadFileName);
 
                 return new FileStreamResult(modifiedPlaylist, PlayListContentType)
                 {
@@ -53,6 +73,7 @@ namespace tv7playlist.Controllers
         {
             var outStream = new MemoryStream();
             var outWriter = new StreamWriter(outStream);
+            _logger.LogInformation(LoggingEvents.Playlist, "Building m3u file content");
 
             using (var tv7ReadStream = await tv7Response.Content.ReadAsStreamAsync())
             using (var reader = new StreamReader(tv7ReadStream))
@@ -60,8 +81,9 @@ namespace tv7playlist.Controllers
                 while (!reader.EndOfStream)
                 {
                     var line = await reader.ReadLineAsync();
-                    line = MultiCastRegex.Replace(line, $"{_proxyUrl}/$2/");
-                    outWriter.WriteLine(line);
+                    var proxyLine = MultiCastRegex.Replace(line, $"{_proxyUrl}/$2/");
+                    outWriter.WriteLine(proxyLine);
+                    _logger.LogDebug(LoggingEvents.Playlist, "Transformed {src} to {dst}", line, proxyLine);
                 }
 
                 await outWriter.FlushAsync();

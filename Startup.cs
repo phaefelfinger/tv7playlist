@@ -1,23 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 
 namespace tv7playlist
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        private readonly ILogger _logger;
+
+        public Startup(IConfiguration configuration, ILogger<Startup> logger)
         {
             Configuration = configuration;
+            _logger = logger;
         }
 
         public IConfiguration Configuration { get; }
@@ -33,15 +30,20 @@ namespace tv7playlist
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-            else
-            {
-                app.UseHsts();
-            }
+            LogConfiguration();
+
+            if (env.IsDevelopment()) app.UseDeveloperExceptionPage();
+
             app.UseMvc();
+        }
+
+        private void LogConfiguration()
+        {
+            var appConfig = Configuration.Get<AppConfig>();
+            _logger.LogInformation(LoggingEvents.Startup, "Using TV7 URL: {TV7Url}", appConfig.TV7Url);
+            _logger.LogInformation(LoggingEvents.Startup, "Using Udpxy URL: {UdpxyUrl}", appConfig.UdpxyUrl);
+            _logger.LogInformation(LoggingEvents.Startup, "Using DownloadFileName: {DownloadFileName}",
+                appConfig.DownloadFileName);
         }
     }
 }
