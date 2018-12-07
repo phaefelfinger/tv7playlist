@@ -19,4 +19,4 @@ COPY --from=build-env /app/out .
 ENV ASPNETCORE_URLS=http://+:80
 EXPOSE 80
 
-ENTRYPOINT ["dotnet", "tv7playlist.dll"]
+ENTRYPOINT ["dotnet", "Tv7Playlist.dll"]
