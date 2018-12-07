@@ -3,6 +3,8 @@
 [Bb]in/
 [Oo]bj/
 
+wwwroot/lib/
+
 # mstest test results
 TestResults
 

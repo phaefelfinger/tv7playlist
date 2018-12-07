@@ -1,4 +1,4 @@
-namespace tv7playlist
+namespace Tv7Playlist
 {
     public class AppConfig
     {

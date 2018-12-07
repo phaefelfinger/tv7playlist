@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace tv7playlist.Controllers
+namespace Tv7Playlist.Controllers
 {
     [Route("api/playlist")]
     [ApiController]
