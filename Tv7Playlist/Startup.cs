@@ -2,9 +2,12 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Tv7Playlist.Core;
+using Tv7Playlist.Data;
 
 namespace Tv7Playlist
 {
@@ -30,7 +33,10 @@ namespace Tv7Playlist
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-
+            //TODO: Move to settings to make it configurable within docker.
+            var connection = "Data Source=playlist.db";
+            services.AddDbContext<PlaylistContext>(options => options.UseSqlite(connection));
+            
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 

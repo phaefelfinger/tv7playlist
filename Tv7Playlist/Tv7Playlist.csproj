@@ -9,6 +9,18 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="2.2.0" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Folder Include="Parser" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\Tv7Playlist.Core\Tv7Playlist.Core.csproj" />
+    <ProjectReference Include="..\Tv7Playlist.Data\Tv7Playlist.Data.csproj" />
   </ItemGroup>
 
 </Project>

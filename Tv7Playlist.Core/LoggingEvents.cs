@@ -1,6 +1,6 @@
-namespace Tv7Playlist
+namespace Tv7Playlist.Core
 {
-    public class LoggingEvents
+    public static class LoggingEvents
     {
         public const int Startup = 1000;
         public const int Playlist = 1001;

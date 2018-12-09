@@ -1,7 +1,7 @@
 using System;
 using System.Diagnostics;
 
-namespace Tv7Playlist.Parser
+namespace Tv7Playlist.Core.Parsers
 {
     [DebuggerDisplay("ParsedTrack-{Id}(Name:{Name}, Url:{Url})")]
     public class ParsedTrack

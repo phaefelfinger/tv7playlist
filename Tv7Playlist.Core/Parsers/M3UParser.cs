@@ -2,12 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.Extensions.Logging;
 
-namespace Tv7Playlist.Parser
+namespace Tv7Playlist.Core.Parsers
 {
-    internal class M3UParser : IPlaylistParser
+    public class M3UParser : IPlaylistParser
     {
         private const string ExtInfStartTag = "#EXTINF:";
         private const string ExtFileStartTag = "#EXTM3U"; 
@@ -120,7 +119,9 @@ namespace Tv7Playlist.Parser
             if (string.IsNullOrWhiteSpace(url))
                 return null;
 
-            var fields = metaLine.Replace(ExtInfStartTag, string.Empty).Split(",");
+            //TODO: Check line parsing of https://github.com/tellytv/telly/blob/dev/internal/m3uplus/main.go
+            //format is base for telly to export.
+            var fields = metaLine.Replace(ExtInfStartTag, string.Empty).Split(',');
             var name = fields.Length >= 2 ? fields[1] : $"{currentId}-unknown";
             
             return new ParsedTrack(currentId, name, url);
