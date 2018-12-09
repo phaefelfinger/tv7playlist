@@ -3,7 +3,7 @@ pipeline:
     image: plugins/docker
     repo: phaefelfinger/tv7playlist
     tags:
-      - latest
+      - 2.0
     secrets: [ docker_username, docker_password ]
     debug: true
     when:

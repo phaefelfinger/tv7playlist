@@ -2,7 +2,7 @@ FROM microsoft/dotnet:sdk AS build-env
 WORKDIR /app
 
 # Copy csproj and restore as distinct layers
-COPY *.csproj ./
+COPY ./*/*.csproj ./
 RUN dotnet restore
 
 # Copy everything else and build
@@ -14,7 +14,7 @@ FROM microsoft/dotnet:aspnetcore-runtime
 
 WORKDIR /app
 
-COPY --from=build-env /app/out .
+COPY --from=build-env /app/Tv7Playlist/out .
 
 ENV ASPNETCORE_URLS=http://+:80
 EXPOSE 80
