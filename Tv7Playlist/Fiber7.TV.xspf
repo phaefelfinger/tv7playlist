@@ -1,0 +1,1734 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<playlist xmlns="http://xspf.org/ns/0/" xmlns:vlc="http://www.videolan.org/vlc/playlist/ns/0/" version="1">
+    <title>TV7 Playlist</title>
+    <trackList>
+        <track>
+            <title>SRF1 HD</title>
+            <location>udp://@239.77.0.77:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1000</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>SRFzwei HD</title>
+            <location>udp://@239.77.0.78:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1005</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>SRF Info HD</title>
+            <location>udp://@239.77.0.5:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1010</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>3+ HD</title>
+            <location>udp://@239.77.0.117:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1015</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>4+ HD</title>
+            <location>udp://@239.77.0.118:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1020</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>5+ HD</title>
+            <location>udp://@239.77.0.179:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1025</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>TV24 HD</title>
+            <location>udp://@239.77.0.183:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1030</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>TV25 HD</title>
+            <location>udp://@239.77.0.184:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1035</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Tele Züri HD</title>
+            <location>udp://@239.77.0.203:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1040</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>TELE TOP HD</title>
+            <location>udp://@239.77.0.206:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1045</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>TeleBärn HD</title>
+            <location>udp://@239.77.0.201:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1050</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>TVO HD</title>
+            <location>udp://@239.77.0.209:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1055</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Tele M1 HD</title>
+            <location>udp://@239.77.0.214:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1060</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>TeleBasel HD</title>
+            <location>udp://@239.77.0.202:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1065</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Tele Z HD</title>
+            <location>udp://@239.77.0.213:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1070</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Tele1 HD</title>
+            <location>udp://@239.77.0.204:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1075</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>TV Südostschweiz HD</title>
+            <location>udp://@239.77.0.222:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1080</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Tele Bielingue HD</title>
+            <location>udp://@239.77.1.42:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1082</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Star TV HD</title>
+            <location>udp://@239.77.0.191:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1085</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Puls 8 HD</title>
+            <location>udp://@239.77.0.180:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1095</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>CHTV HD</title>
+            <location>udp://@239.77.0.181:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1100</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Schweiz 5</title>
+            <location>udp://@239.77.0.21:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1105</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>TeleD HD</title>
+            <location>udp://@239.77.0.208:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1110</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Alf</title>
+            <location>udp://@239.77.5.154:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1115</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>S1 HD</title>
+            <location>udp://@239.77.0.217:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1120</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>SWISS1 HD</title>
+            <location>udp://@239.77.0.76:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1121</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>wetter.tv</title>
+            <location>udp://@239.77.0.224:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1122</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Teleclub Zoom</title>
+            <location>udp://@239.77.0.4:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1125</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>MySports HD D</title>
+            <location>udp://@239.77.0.12:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1130</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Arte HD</title>
+            <location>udp://@239.77.0.82:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1135</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>3Sat HD</title>
+            <location>udp://@239.77.0.106:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1140</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>ORF1 HD</title>
+            <location>udp://@239.77.0.109:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1145</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>ORF2 HD</title>
+            <location>udp://@239.77.0.110:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1150</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Servus TV HD</title>
+            <location>udp://@239.77.0.84:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1155</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Das Erste HD</title>
+            <location>udp://@239.77.0.80:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1160</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>ZDF HD</title>
+            <location>udp://@239.77.0.79:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1165</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>RTL CH</title>
+            <location>udp://@239.77.0.190:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1170</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>RTL 2 (Schweiz)</title>
+            <location>udp://@239.77.0.14:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1175</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Super RTL (Schweiz)</title>
+            <location>udp://@239.77.0.29:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1180</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>RTL Nitro</title>
+            <location>udp://@239.77.0.88:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1185</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>ProSieben (Schweiz)</title>
+            <location>udp://@239.77.0.15:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1190</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>ProSieben Maxx</title>
+            <location>udp://@239.77.0.119:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1195</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Sat.1 (Schweiz)</title>
+            <location>udp://@239.77.0.11:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1200</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Sat1 Gold</title>
+            <location>udp://@239.77.0.99:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1205</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>VOX (Schweiz)</title>
+            <location>udp://@239.77.0.17:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1210</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>SIXX</title>
+            <location>udp://@239.77.0.69:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1215</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Kabel1 (Schweiz)</title>
+            <location>udp://@239.77.0.18:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1220</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Kika HD</title>
+            <location>udp://@239.77.0.108:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1225</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Nickelodeon CH HD</title>
+            <location>udp://@239.77.0.197:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1230</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Disney Channel</title>
+            <location>udp://@239.77.0.44:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1235</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>VIVA CH HD</title>
+            <location>udp://@239.77.0.192:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1240</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>MTV Schweiz HD</title>
+            <location>udp://@239.77.0.196:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1245</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Eurosport</title>
+            <location>udp://@239.77.0.34:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1250</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>SPORT1 HD CH</title>
+            <location>udp://@239.77.0.193:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1255</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>DMAX HD</title>
+            <location>udp://@239.77.0.195:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1260</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>TLC</title>
+            <location>udp://@239.77.0.132:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1265</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Anixe HD</title>
+            <location>udp://@239.77.0.83:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1270</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>one HD</title>
+            <location>udp://@239.77.0.111:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1275</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>ZDF Info HD</title>
+            <location>udp://@239.77.0.102:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1280</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>ZDF Neo HD</title>
+            <location>udp://@239.77.0.100:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1285</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Welt der Wunder</title>
+            <location>udp://@239.77.0.46:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1286</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Welt HD</title>
+            <location>udp://@239.77.0.194:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1290</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>ARD Alpha</title>
+            <location>udp://@239.77.0.51:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1295</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Phoenix HD</title>
+            <location>udp://@239.77.0.105:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1297</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>tagesschau24 HD</title>
+            <location>udp://@239.77.0.129:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1300</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>n-tv</title>
+            <location>udp://@239.77.0.24:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1305</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>EuroNews</title>
+            <location>udp://@239.77.0.43:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1310</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>DW Europe</title>
+            <location>udp://@239.77.0.66:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1315</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>SWR BW HD</title>
+            <location>udp://@239.77.0.81:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1320</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>BR HD</title>
+            <location>udp://@239.77.0.107:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1325</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>WDR HD Köln</title>
+            <location>udp://@239.77.0.215:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1330</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>NDR HD</title>
+            <location>udp://@239.77.0.103:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1335</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>MDR Sachsen HD</title>
+            <location>udp://@239.77.0.124:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1340</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>rbb Berlin HD</title>
+            <location>udp://@239.77.0.123:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1345</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>hr-fernsehen HD</title>
+            <location>udp://@239.77.0.122:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1350</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Tele 5</title>
+            <location>udp://@239.77.0.64:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1355</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Die Neue Zeit TV</title>
+            <location>udp://@239.77.0.60:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1360</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Bibel TV HD</title>
+            <location>udp://@239.77.0.127:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1365</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>HSE24 </title>
+            <location>udp://@239.77.0.63:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1370</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>HSE24 TREND</title>
+            <location>udp://@239.77.0.216:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1375</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Channel 55</title>
+            <location>udp://@239.77.0.223:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1380</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>GoTV</title>
+            <location>udp://@239.77.0.97:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1385</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Booster TV</title>
+            <location>udp://@239.77.0.225:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1390</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>RTS 1 HD</title>
+            <location>udp://@239.77.1.28:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1500</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>RTS 2 HD</title>
+            <location>udp://@239.77.1.29:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1505</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>la télé HD</title>
+            <location>udp://@239.77.1.39:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1510</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Canal Alpha JU HD</title>
+            <location>udp://@239.77.1.53:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1515</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Canal Alpha HD</title>
+            <location>udp://@239.77.1.37:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1520</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Télé Versoix</title>
+            <location>udp://@239.77.1.55:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1525</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>MySports HD F</title>
+            <location>udp://@239.77.1.56:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1530</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>TF1 HD</title>
+            <location>udp://@239.77.1.3:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1535</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>France 2 HD</title>
+            <location>udp://@239.77.1.4:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1540</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>France 3</title>
+            <location>udp://@239.77.1.5:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1545</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>France 4</title>
+            <location>udp://@239.77.1.6:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1550</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>France 5</title>
+            <location>udp://@239.77.1.7:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1555</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>M6 HD</title>
+            <location>udp://@239.77.1.10:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1560</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>C8 HD CH</title>
+            <location>udp://@239.77.1.54:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1565</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>W9 HD</title>
+            <location>udp://@239.77.1.13:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1570</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>RTL 9 HD</title>
+            <location>udp://@239.77.1.36:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1575</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>NRJ12</title>
+            <location>udp://@239.77.1.16:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1580</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Arte F HD</title>
+            <location>udp://@239.77.1.47:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1585</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>NT1</title>
+            <location>udp://@239.77.1.20:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1590</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Gulli</title>
+            <location>udp://@239.77.1.23:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1595</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>TMC</title>
+            <location>udp://@239.77.1.15:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1600</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>BFM TV</title>
+            <location>udp://@239.77.1.24:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1605</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>TVM3</title>
+            <location>udp://@239.77.1.38:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1610</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Rouge TV HD</title>
+            <location>udp://@239.77.1.40:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1615</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>6ter</title>
+            <location>udp://@239.77.1.46:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1620</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>2M Maroc</title>
+            <location>udp://@239.77.1.45:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1625</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Numéro 23</title>
+            <location>udp://@239.77.1.50:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1630</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>LFM TV</title>
+            <location>udp://@239.77.1.51:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1645</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>One TV</title>
+            <location>udp://@239.77.1.52:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1650</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Euronews F</title>
+            <location>udp://@239.77.1.41:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1655</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>France 24</title>
+            <location>udp://@239.77.1.43:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1660</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>TV5MONDE EUROPE</title>
+            <location>udp://@239.77.1.49:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1662</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Alsace 20</title>
+            <location>udp://@239.77.1.25:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1675</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>RSI LA 1 HD</title>
+            <location>udp://@239.77.2.17:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1800</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>RSI LA 2 HD</title>
+            <location>udp://@239.77.2.18:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1805</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Tele Ticino HD</title>
+            <location>udp://@239.77.2.73:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1810</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Rai HD</title>
+            <location>udp://@239.77.2.19:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1813</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Rai Uno</title>
+            <location>udp://@239.77.2.3:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1815</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Rai Due</title>
+            <location>udp://@239.77.2.4:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1820</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Rai Tre</title>
+            <location>udp://@239.77.2.5:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1825</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Rai 4</title>
+            <location>udp://@239.77.2.6:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1830</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Rete4 HD</title>
+            <location>udp://@239.77.2.21:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1835</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Canale5 HD</title>
+            <location>udp://@239.77.2.22:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1840</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Italia 1 HD</title>
+            <location>udp://@239.77.2.20:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1845</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>LA 7</title>
+            <location>udp://@239.77.2.15:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1850</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>LA7d</title>
+            <location>udp://@239.77.2.12:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1855</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>IRIS</title>
+            <location>udp://@239.77.2.14:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1860</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Boing</title>
+            <location>udp://@239.77.2.16:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1865</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Rai Sport+ HD</title>
+            <location>udp://@239.77.2.10:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1870</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Top Calcio 24</title>
+            <location>udp://@239.77.2.52:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1875</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Sportitalia</title>
+            <location>udp://@239.77.2.64:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1880</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Sportitalia 2</title>
+            <location>udp://@239.77.2.68:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1882</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Sportitalia 24</title>
+            <location>udp://@239.77.2.65:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1883</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Rai Storia</title>
+            <location>udp://@239.77.2.31:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1885</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Rai News </title>
+            <location>udp://@239.77.2.32:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1890</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Rai Premium</title>
+            <location>udp://@239.77.2.33:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1895</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Rai Yoyo</title>
+            <location>udp://@239.77.2.34:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1900</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Rai Movie</title>
+            <location>udp://@239.77.2.36:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1905</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>VH1</title>
+            <location>udp://@239.77.2.13:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1910</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Real Time</title>
+            <location>udp://@239.77.2.63:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1915</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>TELELOMBARDIA HD</title>
+            <location>udp://@239.77.2.23:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1920</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>ANTENNATRE HD</title>
+            <location>udp://@239.77.2.24:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>1925</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>BBC One HD</title>
+            <location>udp://@239.77.3.30:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>2205</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>BBC Two HD</title>
+            <location>udp://@239.77.3.29:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>2210</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>ITV 1 HD</title>
+            <location>udp://@239.77.3.31:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>2215</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Channel 4 HD</title>
+            <location>udp://@239.77.3.32:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>2220</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>CBBC HD</title>
+            <location>udp://@239.77.3.54:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>2230</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>CBeebies HD</title>
+            <location>udp://@239.77.3.55:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>2235</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>CITV</title>
+            <location>udp://@239.77.3.17:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>2237</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>ITV 2</title>
+            <location>udp://@239.77.3.14:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>2240</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>ITV 3</title>
+            <location>udp://@239.77.3.15:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>2245</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>ITV 4</title>
+            <location>udp://@239.77.3.16:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>2250</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>BBC Four HD</title>
+            <location>udp://@239.77.3.62:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>2251</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>E4</title>
+            <location>udp://@239.77.3.8:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>2252</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Film 4</title>
+            <location>udp://@239.77.3.21:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>2253</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>BBC World News Europe HD</title>
+            <location>udp://@239.77.3.53:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>2255</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>BBC NEWS HD</title>
+            <location>udp://@239.77.3.52:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>2260</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>CNN International</title>
+            <location>udp://@239.77.3.23:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>2265</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>CNBC Europe</title>
+            <location>udp://@239.77.3.26:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>2270</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Bloomberg</title>
+            <location>udp://@239.77.3.27:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>2275</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Sky News</title>
+            <location>udp://@239.77.3.25:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>2280</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Russia Today</title>
+            <location>udp://@239.77.5.51:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>2282</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Al Jazeera English HD</title>
+            <location>udp://@239.77.5.153:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>2285</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>France 24 E</title>
+            <location>udp://@239.77.1.44:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>2287</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>5 USA</title>
+            <location>udp://@239.77.3.59:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>2290</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>5STAR</title>
+            <location>udp://@239.77.3.60:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>2295</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Travel</title>
+            <location>udp://@239.77.3.50:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>2300</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>More 4</title>
+            <location>udp://@239.77.3.9:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>2305</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Fashion TV</title>
+            <location>udp://@239.77.3.28:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>2310</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>TVR International</title>
+            <location>udp://@239.77.5.112:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>2800</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>TVE Internacional</title>
+            <location>udp://@239.77.4.1:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>2805</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Canal 24 Horas</title>
+            <location>udp://@239.77.4.2:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>2810</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>RTP 1</title>
+            <location>udp://@239.77.4.11:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>2815</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>RTV Montenegro</title>
+            <location>udp://@239.77.5.140:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>2850</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Svet Plus</title>
+            <location>udp://@239.77.5.141:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>2855</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>TVP Polonia</title>
+            <location>udp://@239.77.5.21:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>2857</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Duna TV</title>
+            <location>udp://@239.77.5.157:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>2858</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Atlas TV</title>
+            <location>udp://@239.77.5.155:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>2860</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>BN</title>
+            <location>udp://@239.77.5.163:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>2863</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>TV CG</title>
+            <location>udp://@239.77.5.164:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>2864</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>4E</title>
+            <location>udp://@239.77.5.138:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>2865</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>C1R Europe</title>
+            <location>udp://@239.77.5.136:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>2870</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>RTK 1</title>
+            <location>udp://@239.77.5.38:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>2872</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>TVSH</title>
+            <location>udp://@239.77.5.167:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>2873</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>TV Shqiptar</title>
+            <location>udp://@239.77.5.142:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>2875</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>RTRS plus</title>
+            <location>udp://@239.77.5.148:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>2880</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>STERK TV</title>
+            <location>udp://@239.77.5.151:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>2890</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>BVN TV</title>
+            <location>udp://@239.77.5.18:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>2895</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Arirang World</title>
+            <location>udp://@239.77.5.70:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>2900</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>CCTV4</title>
+            <location>udp://@239.77.5.66:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>2901</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>PCNE Chinese</title>
+            <location>udp://@239.77.5.149:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>2902</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Thai Global Network</title>
+            <location>udp://@239.77.5.69:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>2903</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>TRT TURK</title>
+            <location>udp://@239.77.5.132:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>2905</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>KANAL 7 AVRUPA</title>
+            <location>udp://@239.77.5.131:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>2910</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>HABERTURK</title>
+            <location>udp://@239.77.5.133:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>2915</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>TRT 3-SPOR</title>
+            <location>udp://@239.77.5.130:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>2920</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>FB TV</title>
+            <location>udp://@239.77.5.135:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>2925</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>TTN</title>
+            <location>udp://@239.77.5.160:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>3000</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>LBC Europe</title>
+            <location>udp://@239.77.5.161:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>3005</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Al Masriyah</title>
+            <location>udp://@239.77.5.165:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>3010</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Sama Dubai</title>
+            <location>udp://@239.77.5.168:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>3015</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>MBC Europe</title>
+            <location>udp://@239.77.5.169:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>3020</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Saudi 1</title>
+            <location>udp://@239.77.5.171:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>3025</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Dubai Sports 3</title>
+            <location>udp://@239.77.5.172:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>3030</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Jordan TV</title>
+            <location>udp://@239.77.5.173:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>3035</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Kuwait TV</title>
+            <location>udp://@239.77.5.174:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>3040</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Oman TV</title>
+            <location>udp://@239.77.5.175:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>3045</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Qatar TV</title>
+            <location>udp://@239.77.5.176:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>3050</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Sharjah TV</title>
+            <location>udp://@239.77.5.178:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>3055</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Dubai TV</title>
+            <location>udp://@239.77.5.179:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>3060</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Abu Dhabi TV</title>
+            <location>udp://@239.77.5.180:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>3065</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>Al Sharqiya</title>
+            <location>udp://@239.77.5.181:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>3070</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+        <track>
+            <title>BBB Teststream</title>
+            <location>udp://@239.77.0.1:5000</location>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+                <vlc:id>9999</vlc:id>
+                <vlc:option>network-caching=1000</vlc:option>
+            </extension>
+        </track>
+    </trackList>
+</playlist>

@@ -8,8 +8,8 @@ namespace Tv7Playlist.Data.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "PlaylistEntries",
-                columns: table => new
+                "PlaylistEntries",
+                table => new
                 {
                     Id = table.Column<Guid>(nullable: false),
                     TrackNumber = table.Column<int>(nullable: false),
@@ -26,7 +26,7 @@ namespace Tv7Playlist.Data.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "PlaylistEntries");
+                "PlaylistEntries");
         }
     }
 }

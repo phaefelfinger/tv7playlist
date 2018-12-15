@@ -1,0 +1,433 @@
+#EXTM3U
+#EXTINF:-1,SRF1 HD
+udp://@239.77.0.77:5000
+#EXTINF:-1,SRFzwei HD
+udp://@239.77.0.78:5000
+#EXTINF:-1,SRF Info HD
+udp://@239.77.0.5:5000
+#EXTINF:-1,3+ HD
+udp://@239.77.0.117:5000
+#EXTINF:-1,4+ HD
+udp://@239.77.0.118:5000
+#EXTINF:-1,5+ HD
+udp://@239.77.0.179:5000
+#EXTINF:-1,TV24 HD
+udp://@239.77.0.183:5000
+#EXTINF:-1,TV25 HD
+udp://@239.77.0.184:5000
+#EXTINF:-1,Tele Züri HD
+udp://@239.77.0.203:5000
+#EXTINF:-1,TELE TOP HD
+udp://@239.77.0.206:5000
+#EXTINF:-1,TeleBärn HD
+udp://@239.77.0.201:5000
+#EXTINF:-1,TVO HD
+udp://@239.77.0.209:5000
+#EXTINF:-1,Tele M1 HD
+udp://@239.77.0.214:5000
+#EXTINF:-1,TeleBasel HD
+udp://@239.77.0.202:5000
+#EXTINF:-1,Tele Z HD
+udp://@239.77.0.213:5000
+#EXTINF:-1,Tele1 HD
+udp://@239.77.0.204:5000
+#EXTINF:-1,TV Südostschweiz HD
+udp://@239.77.0.222:5000
+#EXTINF:-1,Tele Bielingue HD
+udp://@239.77.1.42:5000
+#EXTINF:-1,Star TV HD
+udp://@239.77.0.191:5000
+#EXTINF:-1,Puls 8 HD
+udp://@239.77.0.180:5000
+#EXTINF:-1,CHTV HD
+udp://@239.77.0.181:5000
+#EXTINF:-1,Schweiz 5
+udp://@239.77.0.21:5000
+#EXTINF:-1,TeleD HD
+udp://@239.77.0.208:5000
+#EXTINF:-1,Alf
+udp://@239.77.5.154:5000
+#EXTINF:-1,S1 HD
+udp://@239.77.0.217:5000
+#EXTINF:-1,SWISS1 HD
+udp://@239.77.0.76:5000
+#EXTINF:-1,wetter.tv
+udp://@239.77.0.224:5000
+#EXTINF:-1,Teleclub Zoom
+udp://@239.77.0.4:5000
+#EXTINF:-1,MySports HD D
+udp://@239.77.0.12:5000
+#EXTINF:-1,Arte HD
+udp://@239.77.0.82:5000
+#EXTINF:-1,3Sat HD
+udp://@239.77.0.106:5000
+#EXTINF:-1,ORF1 HD
+udp://@239.77.0.109:5000
+#EXTINF:-1,ORF2 HD
+udp://@239.77.0.110:5000
+#EXTINF:-1,Servus TV HD
+udp://@239.77.0.84:5000
+#EXTINF:-1,Das Erste HD
+udp://@239.77.0.80:5000
+#EXTINF:-1,ZDF HD
+udp://@239.77.0.79:5000
+#EXTINF:-1,RTL CH
+udp://@239.77.0.190:5000
+#EXTINF:-1,RTL 2 (Schweiz)
+udp://@239.77.0.14:5000
+#EXTINF:-1,Super RTL (Schweiz)
+udp://@239.77.0.29:5000
+#EXTINF:-1,RTL Nitro
+udp://@239.77.0.88:5000
+#EXTINF:-1,ProSieben (Schweiz)
+udp://@239.77.0.15:5000
+#EXTINF:-1,ProSieben Maxx
+udp://@239.77.0.119:5000
+#EXTINF:-1,Sat.1 (Schweiz)
+udp://@239.77.0.11:5000
+#EXTINF:-1,Sat1 Gold
+udp://@239.77.0.99:5000
+#EXTINF:-1,VOX (Schweiz)
+udp://@239.77.0.17:5000
+#EXTINF:-1,SIXX
+udp://@239.77.0.69:5000
+#EXTINF:-1,Kabel1 (Schweiz)
+udp://@239.77.0.18:5000
+#EXTINF:-1,Kika HD
+udp://@239.77.0.108:5000
+#EXTINF:-1,Nickelodeon CH HD
+udp://@239.77.0.197:5000
+#EXTINF:-1,Disney Channel
+udp://@239.77.0.44:5000
+#EXTINF:-1,VIVA CH HD
+udp://@239.77.0.192:5000
+#EXTINF:-1,MTV Schweiz HD
+udp://@239.77.0.196:5000
+#EXTINF:-1,Eurosport
+udp://@239.77.0.34:5000
+#EXTINF:-1,SPORT1 HD CH
+udp://@239.77.0.193:5000
+#EXTINF:-1,DMAX HD
+udp://@239.77.0.195:5000
+#EXTINF:-1,TLC
+udp://@239.77.0.132:5000
+#EXTINF:-1,Anixe HD
+udp://@239.77.0.83:5000
+#EXTINF:-1,one HD
+udp://@239.77.0.111:5000
+#EXTINF:-1,ZDF Info HD
+udp://@239.77.0.102:5000
+#EXTINF:-1,ZDF Neo HD
+udp://@239.77.0.100:5000
+#EXTINF:-1,Welt der Wunder
+udp://@239.77.0.46:5000
+#EXTINF:-1,Welt HD
+udp://@239.77.0.194:5000
+#EXTINF:-1,ARD Alpha
+udp://@239.77.0.51:5000
+#EXTINF:-1,Phoenix HD
+udp://@239.77.0.105:5000
+#EXTINF:-1,tagesschau24 HD
+udp://@239.77.0.129:5000
+#EXTINF:-1,n-tv
+udp://@239.77.0.24:5000
+#EXTINF:-1,EuroNews
+udp://@239.77.0.43:5000
+#EXTINF:-1,DW Europe
+udp://@239.77.0.66:5000
+#EXTINF:-1,SWR BW HD
+udp://@239.77.0.81:5000
+#EXTINF:-1,BR HD
+udp://@239.77.0.107:5000
+#EXTINF:-1,WDR HD Köln
+udp://@239.77.0.215:5000
+#EXTINF:-1,NDR HD
+udp://@239.77.0.103:5000
+#EXTINF:-1,MDR Sachsen HD
+udp://@239.77.0.124:5000
+#EXTINF:-1,rbb Berlin HD
+udp://@239.77.0.123:5000
+#EXTINF:-1,hr-fernsehen HD
+udp://@239.77.0.122:5000
+#EXTINF:-1,Tele 5
+udp://@239.77.0.64:5000
+#EXTINF:-1,Die Neue Zeit TV
+udp://@239.77.0.60:5000
+#EXTINF:-1,Bibel TV HD
+udp://@239.77.0.127:5000
+#EXTINF:-1,HSE24 
+udp://@239.77.0.63:5000
+#EXTINF:-1,HSE24 TREND
+udp://@239.77.0.216:5000
+#EXTINF:-1,Channel 55
+udp://@239.77.0.223:5000
+#EXTINF:-1,GoTV
+udp://@239.77.0.97:5000
+#EXTINF:-1,Booster TV
+udp://@239.77.0.225:5000
+#EXTINF:-1,RTS 1 HD
+udp://@239.77.1.28:5000
+#EXTINF:-1,RTS 2 HD
+udp://@239.77.1.29:5000
+#EXTINF:-1,la télé HD
+udp://@239.77.1.39:5000
+#EXTINF:-1,Canal Alpha JU HD
+udp://@239.77.1.53:5000
+#EXTINF:-1,Canal Alpha HD
+udp://@239.77.1.37:5000
+#EXTINF:-1,Télé Versoix
+udp://@239.77.1.55:5000
+#EXTINF:-1,MySports HD F
+udp://@239.77.1.56:5000
+#EXTINF:-1,TF1 HD
+udp://@239.77.1.3:5000
+#EXTINF:-1,France 2 HD
+udp://@239.77.1.4:5000
+#EXTINF:-1,France 3
+udp://@239.77.1.5:5000
+#EXTINF:-1,France 4
+udp://@239.77.1.6:5000
+#EXTINF:-1,France 5
+udp://@239.77.1.7:5000
+#EXTINF:-1,M6 HD
+udp://@239.77.1.10:5000
+#EXTINF:-1,C8 HD CH
+udp://@239.77.1.54:5000
+#EXTINF:-1,W9 HD
+udp://@239.77.1.13:5000
+#EXTINF:-1,RTL 9 HD
+udp://@239.77.1.36:5000
+#EXTINF:-1,NRJ12
+udp://@239.77.1.16:5000
+#EXTINF:-1,Arte F HD
+udp://@239.77.1.47:5000
+#EXTINF:-1,NT1
+udp://@239.77.1.20:5000
+#EXTINF:-1,Gulli
+udp://@239.77.1.23:5000
+#EXTINF:-1,TMC
+udp://@239.77.1.15:5000
+#EXTINF:-1,BFM TV
+udp://@239.77.1.24:5000
+#EXTINF:-1,TVM3
+udp://@239.77.1.38:5000
+#EXTINF:-1,Rouge TV HD
+udp://@239.77.1.40:5000
+#EXTINF:-1,6ter
+udp://@239.77.1.46:5000
+#EXTINF:-1,2M Maroc
+udp://@239.77.1.45:5000
+#EXTINF:-1,Numéro 23
+udp://@239.77.1.50:5000
+#EXTINF:-1,LFM TV
+udp://@239.77.1.51:5000
+#EXTINF:-1,One TV
+udp://@239.77.1.52:5000
+#EXTINF:-1,Euronews F
+udp://@239.77.1.41:5000
+#EXTINF:-1,France 24
+udp://@239.77.1.43:5000
+#EXTINF:-1,TV5MONDE EUROPE
+udp://@239.77.1.49:5000
+#EXTINF:-1,Alsace 20
+udp://@239.77.1.25:5000
+#EXTINF:-1,RSI LA 1 HD
+udp://@239.77.2.17:5000
+#EXTINF:-1,RSI LA 2 HD
+udp://@239.77.2.18:5000
+#EXTINF:-1,Tele Ticino HD
+udp://@239.77.2.73:5000
+#EXTINF:-1,Rai HD
+udp://@239.77.2.19:5000
+#EXTINF:-1,Rai Uno
+udp://@239.77.2.3:5000
+#EXTINF:-1,Rai Due
+udp://@239.77.2.4:5000
+#EXTINF:-1,Rai Tre
+udp://@239.77.2.5:5000
+#EXTINF:-1,Rai 4
+udp://@239.77.2.6:5000
+#EXTINF:-1,Rete4 HD
+udp://@239.77.2.21:5000
+#EXTINF:-1,Canale5 HD
+udp://@239.77.2.22:5000
+#EXTINF:-1,Italia 1 HD
+udp://@239.77.2.20:5000
+#EXTINF:-1,LA 7
+udp://@239.77.2.15:5000
+#EXTINF:-1,LA7d
+udp://@239.77.2.12:5000
+#EXTINF:-1,IRIS
+udp://@239.77.2.14:5000
+#EXTINF:-1,Boing
+udp://@239.77.2.16:5000
+#EXTINF:-1,Rai Sport+ HD
+udp://@239.77.2.10:5000
+#EXTINF:-1,Top Calcio 24
+udp://@239.77.2.52:5000
+#EXTINF:-1,Sportitalia
+udp://@239.77.2.64:5000
+#EXTINF:-1,Sportitalia 2
+udp://@239.77.2.68:5000
+#EXTINF:-1,Sportitalia 24
+udp://@239.77.2.65:5000
+#EXTINF:-1,Rai Storia
+udp://@239.77.2.31:5000
+#EXTINF:-1,Rai News 
+udp://@239.77.2.32:5000
+#EXTINF:-1,Rai Premium
+udp://@239.77.2.33:5000
+#EXTINF:-1,Rai Yoyo
+udp://@239.77.2.34:5000
+#EXTINF:-1,Rai Movie
+udp://@239.77.2.36:5000
+#EXTINF:-1,VH1
+udp://@239.77.2.13:5000
+#EXTINF:-1,Real Time
+udp://@239.77.2.63:5000
+#EXTINF:-1,TELELOMBARDIA HD
+udp://@239.77.2.23:5000
+#EXTINF:-1,ANTENNATRE HD
+udp://@239.77.2.24:5000
+#EXTINF:-1,BBC One HD
+udp://@239.77.3.30:5000
+#EXTINF:-1,BBC Two HD
+udp://@239.77.3.29:5000
+#EXTINF:-1,ITV 1 HD
+udp://@239.77.3.31:5000
+#EXTINF:-1,Channel 4 HD
+udp://@239.77.3.32:5000
+#EXTINF:-1,CBBC HD
+udp://@239.77.3.54:5000
+#EXTINF:-1,CBeebies HD
+udp://@239.77.3.55:5000
+#EXTINF:-1,CITV
+udp://@239.77.3.17:5000
+#EXTINF:-1,ITV 2
+udp://@239.77.3.14:5000
+#EXTINF:-1,ITV 3
+udp://@239.77.3.15:5000
+#EXTINF:-1,ITV 4
+udp://@239.77.3.16:5000
+#EXTINF:-1,BBC Four HD
+udp://@239.77.3.62:5000
+#EXTINF:-1,E4
+udp://@239.77.3.8:5000
+#EXTINF:-1,Film 4
+udp://@239.77.3.21:5000
+#EXTINF:-1,BBC World News Europe HD
+udp://@239.77.3.53:5000
+#EXTINF:-1,BBC NEWS HD
+udp://@239.77.3.52:5000
+#EXTINF:-1,CNN International
+udp://@239.77.3.23:5000
+#EXTINF:-1,CNBC Europe
+udp://@239.77.3.26:5000
+#EXTINF:-1,Bloomberg
+udp://@239.77.3.27:5000
+#EXTINF:-1,Sky News
+udp://@239.77.3.25:5000
+#EXTINF:-1,Russia Today
+udp://@239.77.5.51:5000
+#EXTINF:-1,Al Jazeera English HD
+udp://@239.77.5.153:5000
+#EXTINF:-1,France 24 E
+udp://@239.77.1.44:5000
+#EXTINF:-1,5 USA
+udp://@239.77.3.59:5000
+#EXTINF:-1,5STAR
+udp://@239.77.3.60:5000
+#EXTINF:-1,Travel
+udp://@239.77.3.50:5000
+#EXTINF:-1,More 4
+udp://@239.77.3.9:5000
+#EXTINF:-1,Fashion TV
+udp://@239.77.3.28:5000
+#EXTINF:-1,TVR International
+udp://@239.77.5.112:5000
+#EXTINF:-1,TVE Internacional
+udp://@239.77.4.1:5000
+#EXTINF:-1,Canal 24 Horas
+udp://@239.77.4.2:5000
+#EXTINF:-1,RTP 1
+udp://@239.77.4.11:5000
+#EXTINF:-1,RTV Montenegro
+udp://@239.77.5.140:5000
+#EXTINF:-1,Svet Plus
+udp://@239.77.5.141:5000
+#EXTINF:-1,TVP Polonia
+udp://@239.77.5.21:5000
+#EXTINF:-1,Duna TV
+udp://@239.77.5.157:5000
+#EXTINF:-1,Atlas TV
+udp://@239.77.5.155:5000
+#EXTINF:-1,BN
+udp://@239.77.5.163:5000
+#EXTINF:-1,TV CG
+udp://@239.77.5.164:5000
+#EXTINF:-1,4E
+udp://@239.77.5.138:5000
+#EXTINF:-1,C1R Europe
+udp://@239.77.5.136:5000
+#EXTINF:-1,RTK 1
+udp://@239.77.5.38:5000
+#EXTINF:-1,TVSH
+udp://@239.77.5.167:5000
+#EXTINF:-1,TV Shqiptar
+udp://@239.77.5.142:5000
+#EXTINF:-1,RTRS plus
+udp://@239.77.5.148:5000
+#EXTINF:-1,STERK TV
+udp://@239.77.5.151:5000
+#EXTINF:-1,BVN TV
+udp://@239.77.5.18:5000
+#EXTINF:-1,Arirang World
+udp://@239.77.5.70:5000
+#EXTINF:-1,CCTV4
+udp://@239.77.5.66:5000
+#EXTINF:-1,PCNE Chinese
+udp://@239.77.5.149:5000
+#EXTINF:-1,Thai Global Network
+udp://@239.77.5.69:5000
+#EXTINF:-1,TRT TURK
+udp://@239.77.5.132:5000
+#EXTINF:-1,KANAL 7 AVRUPA
+udp://@239.77.5.131:5000
+#EXTINF:-1,HABERTURK
+udp://@239.77.5.133:5000
+#EXTINF:-1,TRT 3-SPOR
+udp://@239.77.5.130:5000
+#EXTINF:-1,FB TV
+udp://@239.77.5.135:5000
+#EXTINF:-1,TTN
+udp://@239.77.5.160:5000
+#EXTINF:-1,LBC Europe
+udp://@239.77.5.161:5000
+#EXTINF:-1,Al Masriyah
+udp://@239.77.5.165:5000
+#EXTINF:-1,Sama Dubai
+udp://@239.77.5.168:5000
+#EXTINF:-1,MBC Europe
+udp://@239.77.5.169:5000
+#EXTINF:-1,Saudi 1
+udp://@239.77.5.171:5000
+#EXTINF:-1,Dubai Sports 3
+udp://@239.77.5.172:5000
+#EXTINF:-1,Jordan TV
+udp://@239.77.5.173:5000
+#EXTINF:-1,Kuwait TV
+udp://@239.77.5.174:5000
+#EXTINF:-1,Oman TV
+udp://@239.77.5.175:5000
+#EXTINF:-1,Qatar TV
+udp://@239.77.5.176:5000
+#EXTINF:-1,Sharjah TV
+udp://@239.77.5.178:5000
+#EXTINF:-1,Dubai TV
+udp://@239.77.5.179:5000
+#EXTINF:-1,Abu Dhabi TV
+udp://@239.77.5.180:5000
+#EXTINF:-1,Al Sharqiya
+udp://@239.77.5.181:5000
+#EXTINF:-1,BBB Teststream
+udp://@239.77.0.1:5000

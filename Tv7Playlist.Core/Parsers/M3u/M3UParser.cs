@@ -4,12 +4,14 @@ using System.IO;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 
-namespace Tv7Playlist.Core.Parsers
+namespace Tv7Playlist.Core.Parsers.M3u
 {
     public class M3UParser : IPlaylistParser
     {
         private const string ExtInfStartTag = "#EXTINF:";
-        private const string ExtFileStartTag = "#EXTM3U"; 
+        private const string ExtFileStartTag = "#EXTM3U";
+        private const int IdStartNumber = 1000;
+        private const int IdIncrementNumber = 5;
 
         private readonly ILogger<M3UParser> _logger;
 
@@ -47,12 +49,12 @@ namespace Tv7Playlist.Core.Parsers
             }
 
             var tracks = new List<ParsedTrack>(300);
-            var currentId = 1000;
+            var currentId = IdStartNumber;
 
             while (!reader.EndOfStream)
             {
                 await ParseTracksAsync(reader, tracks, currentId);
-                currentId++;
+                currentId+=IdIncrementNumber;
             }
 
             return tracks;
