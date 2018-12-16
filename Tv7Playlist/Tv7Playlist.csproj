@@ -14,11 +14,6 @@
 
 
   <ItemGroup>
-    <Folder Include="Parser" />
-  </ItemGroup>
-
-
-  <ItemGroup>
     <ProjectReference Include="..\Tv7Playlist.Core\Tv7Playlist.Core.csproj" />
     <ProjectReference Include="..\Tv7Playlist.Data\Tv7Playlist.Data.csproj" />
   </ItemGroup>
