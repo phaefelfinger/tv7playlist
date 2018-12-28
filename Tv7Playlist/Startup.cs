@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using System;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -7,6 +8,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Tv7Playlist.Core;
+using Tv7Playlist.Core.Parsers;
+using Tv7Playlist.Core.Parsers.M3u;
+using Tv7Playlist.Core.Parsers.Xspf;
 using Tv7Playlist.Data;
 
 namespace Tv7Playlist
@@ -33,10 +37,9 @@ namespace Tv7Playlist
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            //TODO: Move to settings to make it configurable within docker.
-            var connection = "Data Source=playlist.db";
-            services.AddDbContext<PlaylistContext>(options => options.UseSqlite(connection));
-            
+            ConfigureParser(services);
+            ConfigureDatabase(services);
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
@@ -66,6 +69,29 @@ namespace Tv7Playlist
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+        }
+
+        private void ConfigureParser(IServiceCollection services)
+        {
+            var type = Configuration.Get<AppConfig>().SourceType;
+            switch (type)
+            {
+                case AppConfig.SourceTypeEnum.M3U:
+                    services.AddTransient<IPlaylistParser, M3UParser>();
+                    break;
+                case AppConfig.SourceTypeEnum.XSPF:
+                    services.AddTransient<IPlaylistParser, XspfParser>();
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+        }
+        
+        private static void ConfigureDatabase(IServiceCollection services)
+        {
+            //TODO: Move to settings to make it configurable within docker.
+            var connection = "Data Source=playlist.db";
+            services.AddDbContext<PlaylistContext>(options => options.UseSqlite(connection));
         }
 
         private void LogConfiguration()
