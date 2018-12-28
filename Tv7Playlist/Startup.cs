@@ -79,7 +79,7 @@ namespace Tv7Playlist
                 case AppConfig.SourceTypeEnum.M3U:
                     services.AddTransient<IPlaylistParser, M3UParser>();
                     break;
-                case AppConfig.SourceTypeEnum.XSPF:
+                case AppConfig.SourceTypeEnum.Xspf:
                     services.AddTransient<IPlaylistParser, XspfParser>();
                     break;
                 default:
