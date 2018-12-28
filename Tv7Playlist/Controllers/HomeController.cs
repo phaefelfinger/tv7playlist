@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Tv7Playlist.Core;
 using Tv7Playlist.Models;
 
 namespace Tv7Playlist.Controllers
@@ -13,19 +14,22 @@ namespace Tv7Playlist.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IAppConfig _appConfig;
+        private readonly IPlaylistLoader _playlistLoader;
 
-        public HomeController(ILogger<HomeController> logger, IConfiguration configuration)
+        public HomeController(ILogger<HomeController> logger, IAppConfig appConfig, IPlaylistLoader playlistLoader)
         {
-            if (configuration == null) throw new ArgumentNullException(nameof(configuration));
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
-            
-            var appConfig = configuration.Get<AppConfig>();
-            
+            _appConfig = appConfig ?? throw new ArgumentNullException(nameof(appConfig));
+            _playlistLoader = playlistLoader ?? throw new ArgumentNullException(nameof(playlistLoader));
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var tracks = await _playlistLoader.LoadPlaylistFromUrl(_appConfig.TV7Url);
+            var model = new HomeModel(tracks);
+            
+            return View(model);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

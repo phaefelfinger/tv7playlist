@@ -1,4 +1,5 @@
-﻿@{
+﻿@model HomeModel;
+@{
     ViewData["Title"] = "TV7 Playlist";
 }
 
@@ -6,3 +7,16 @@
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+<table>
+@{
+    foreach (var track in Model.Tracks)
+    {
+        <tr>
+            <td>@track.Id</td>
+            <td>@track.Name</td>
+            <td>@track.Url</td>
+        </tr>
+    }
+}
+</table>

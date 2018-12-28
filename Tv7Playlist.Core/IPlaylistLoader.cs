@@ -6,6 +6,6 @@ namespace Tv7Playlist.Core
 {
     public interface IPlaylistLoader
     {
-        Task<IReadOnlyCollection<ParsedTrack>> LoadPlaylistFromUrl();
+        Task<IReadOnlyCollection<ParsedTrack>> LoadPlaylistFromUrl(string url);
     }
 }

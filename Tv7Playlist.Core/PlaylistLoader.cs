@@ -12,27 +12,23 @@ namespace Tv7Playlist.Core
     {
         private readonly ILogger<PlaylistLoader> _logger;
         private readonly IPlaylistParser _playlistParser;
-        private readonly string _tv7Url;
 
-        public PlaylistLoader(ILogger<PlaylistLoader> logger, IAppConfig appConfig, IPlaylistParser playlistParser)
+        public PlaylistLoader(ILogger<PlaylistLoader> logger, IPlaylistParser playlistParser)
         {
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
             _playlistParser = playlistParser ?? throw new ArgumentNullException(nameof(playlistParser));
-
-            _tv7Url = appConfig.TV7Url;
-
         }
 
-        public async Task<IReadOnlyCollection<ParsedTrack>> LoadPlaylistFromUrl()
+        public async Task<IReadOnlyCollection<ParsedTrack>> LoadPlaylistFromUrl(string url)
         {
             using (var httpClient = new HttpClient())
             {
-                _logger.LogInformation(LoggingEvents.Playlist, "Downloading playlist from {tv7url}", _tv7Url);
+                _logger.LogInformation(LoggingEvents.Playlist, "Downloading playlist from {tv7url}", url);
                 
-                var tv7Response = await httpClient.GetAsync(_tv7Url);
+                var tv7Response = await httpClient.GetAsync(url);
                 if (!tv7Response.IsSuccessStatusCode)
                 {
-                    _logger.LogWarning(LoggingEvents.PlaylistNotFound, "Could not download playlist from {tv7url}. The StatusCode was: {StatusCode}", _tv7Url, tv7Response.StatusCode);
+                    _logger.LogWarning(LoggingEvents.PlaylistNotFound, "Could not download playlist from {tv7url}. The StatusCode was: {StatusCode}", url, tv7Response.StatusCode);
                 }
 
                 return await ParseTracksFromResponseAsync(tv7Response);
