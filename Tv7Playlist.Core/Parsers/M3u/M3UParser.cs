@@ -20,7 +20,7 @@ namespace Tv7Playlist.Core.Parsers.M3u
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
-        public async Task<IReadOnlyCollection<ParsedTrack>> ParseFromStream(Stream stream)
+        public async Task<IReadOnlyCollection<ParsedTrack>> ParseFromStreamAsync(Stream stream)
         {
             if (stream == null) throw new ArgumentNullException(nameof(stream));
 

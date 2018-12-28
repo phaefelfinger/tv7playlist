@@ -6,6 +6,6 @@ namespace Tv7Playlist.Core.Parsers
 {
     public interface IPlaylistParser
     {
-        Task<IReadOnlyCollection<ParsedTrack>> ParseFromStream(Stream stream);
+        Task<IReadOnlyCollection<ParsedTrack>> ParseFromStreamAsync(Stream stream);
     }
 }

@@ -10,7 +10,7 @@ namespace Tv7Playlist.Core.Parsers.Xspf
 {
     public class XspfParser : IPlaylistParser
     {
-        public Task<IReadOnlyCollection<ParsedTrack>> ParseFromStream(Stream stream)
+        public Task<IReadOnlyCollection<ParsedTrack>> ParseFromStreamAsync(Stream stream)
         {
             var deserializedList = DeserializePlaylist(stream);
 

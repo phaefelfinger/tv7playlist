@@ -1,15 +1,11 @@
 using System;
+using Tv7Playlist.Core;
 
 namespace Tv7Playlist
 {
-    public class AppConfig
+    public class AppConfig : IAppConfig
     {
-        public enum SourceTypeEnum
-        {
-            M3U,
-            Xspf
-        }
-
+       
         private string _tv7Url;
         private string _udpxyUrl;
 

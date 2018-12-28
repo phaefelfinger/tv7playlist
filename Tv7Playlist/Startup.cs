@@ -37,8 +37,11 @@ namespace Tv7Playlist
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            ConfigureParser(services);
-            ConfigureDatabase(services);
+            var appConfig = ConfigureAppConfig(services);
+
+            LogConfiguration(appConfig);
+            ConfigureParser(services, appConfig);
+            ConfigureDatabase(services, appConfig);
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
@@ -46,8 +49,6 @@ namespace Tv7Playlist
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            LogConfiguration();
-
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -66,37 +67,45 @@ namespace Tv7Playlist
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    "default",
+                    "{controller=Home}/{action=Index}/{id?}");
             });
         }
 
-        private void ConfigureParser(IServiceCollection services)
+        private void ConfigureParser(IServiceCollection services, IAppConfig appConfig)
         {
-            var type = Configuration.Get<AppConfig>().SourceType;
+            services.AddTransient<IPlaylistLoader, PlaylistLoader>();
+
+            var type = appConfig.SourceType;
             switch (type)
             {
-                case AppConfig.SourceTypeEnum.M3U:
+                case SourceTypeEnum.M3U:
                     services.AddTransient<IPlaylistParser, M3UParser>();
                     break;
-                case AppConfig.SourceTypeEnum.Xspf:
+                case SourceTypeEnum.Xspf:
                     services.AddTransient<IPlaylistParser, XspfParser>();
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
         }
-        
-        private static void ConfigureDatabase(IServiceCollection services)
+
+        private IAppConfig ConfigureAppConfig(IServiceCollection services)
+        {
+            var appConfig = Configuration.Get<AppConfig>();
+            services.AddSingleton<IAppConfig>(appConfig);
+            return appConfig;
+        }
+
+        private static void ConfigureDatabase(IServiceCollection services, IAppConfig appConfig)
         {
             //TODO: Move to settings to make it configurable within docker.
             var connection = "Data Source=playlist.db";
             services.AddDbContext<PlaylistContext>(options => options.UseSqlite(connection));
         }
 
-        private void LogConfiguration()
+        private void LogConfiguration(IAppConfig appConfig)
         {
-            var appConfig = Configuration.Get<AppConfig>();
             _logger.LogInformation(LoggingEvents.Startup, "Using TV7 URL: {TV7Url}", appConfig.TV7Url);
             _logger.LogInformation(LoggingEvents.Startup, "Using Udpxy URL: {UdpxyUrl}", appConfig.UdpxyUrl);
             _logger.LogInformation(LoggingEvents.Startup, "Using DownloadFileName: {DownloadFileName}",
