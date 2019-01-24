@@ -10,7 +10,7 @@ using Tv7Playlist.Core;
 
 namespace Tv7Playlist.Controllers
 {
-    [Route("api/playlist")]
+    [Route("api/playlist-old")]
     [ApiController]
     public class PlayListController : ControllerBase
     {

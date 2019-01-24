@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Tv7Playlist.Data;
 
 namespace Tv7Playlist.Data.Migrations
 {
     [DbContext(typeof(PlaylistContext))]
-    partial class PlaylistContextModelSnapshot : ModelSnapshot
+    [Migration("20190124221302_AddedEnabledAvailableNameOverride")]
+    partial class AddedEnabledAvailableNameOverride
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
