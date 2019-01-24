@@ -16,6 +16,9 @@ TestResults
 *.user
 *.sln.docstates
 
+# sqlite databases
+*.db
+
 # Build results
 [Dd]ebug/
 [Rr]elease/
