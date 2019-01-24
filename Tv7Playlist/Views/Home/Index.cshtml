@@ -10,18 +10,20 @@
         <th>Name</th>
         <th>Name override</th>
         <th>Enabled</th>
+        <th>Available</th>
         <th>URL</th>
     </tr>
 
     @{
-    foreach (var track in Model.Tracks)
+    foreach (var track in Model.PlaylistEntries)
     {
         <tr>
-            <td></td>
-            <td>@track.Id</td>
+            <td>@track.Position</td>
+            <td>@track.TrackNumber</td>
             <td>@track.Name</td>
-            <td></td>
-            <td></td>
+            <td>@track.NameOverride</td>
+            <td>@track.IsEnabled</td>
+            <td>@track.IsAvailable</td>
             <td>@track.Url</td>
         </tr>
     }

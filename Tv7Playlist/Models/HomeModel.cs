@@ -1,16 +1,16 @@
 using System;
 using System.Collections.Generic;
-using Tv7Playlist.Core.Parsers;
+using Tv7Playlist.Data;
 
 namespace Tv7Playlist.Models
 {
     public class HomeModel
     {
-        public IReadOnlyCollection<ParsedTrack> Tracks { get; }
-
-        public HomeModel(IReadOnlyCollection<ParsedTrack> tracks)
+        public HomeModel(List<PlaylistEntry> playlistEntries)
         {
-            Tracks = tracks ?? throw new ArgumentNullException(nameof(tracks));
+            PlaylistEntries = playlistEntries ?? throw new ArgumentNullException(nameof(playlistEntries));
         }
+
+        public List<PlaylistEntry> PlaylistEntries { get; }
     }
 }

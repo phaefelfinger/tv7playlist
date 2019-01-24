@@ -12,6 +12,7 @@ namespace Tv7Playlist.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(nullable: false),
+                    Position = table.Column<int>(nullable: false),
                     TrackNumber = table.Column<int>(nullable: false),
                     Name = table.Column<string>(nullable: true),
                     NameOverride = table.Column<string>(nullable: true),

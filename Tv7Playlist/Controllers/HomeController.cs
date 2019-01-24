@@ -1,11 +1,15 @@
 ﻿using System;
+using System.Collections.Immutable;
 using System.Diagnostics;
+using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Tv7Playlist.Core;
+using Tv7Playlist.Data;
 using Tv7Playlist.Models;
 
 namespace Tv7Playlist.Controllers
@@ -14,19 +18,19 @@ namespace Tv7Playlist.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IAppConfig _appConfig;
-        private readonly IPlaylistLoader _playlistLoader;
+        private readonly PlaylistContext _playlistContext;
 
-        public HomeController(ILogger<HomeController> logger, IAppConfig appConfig, IPlaylistLoader playlistLoader)
+        public HomeController(ILogger<HomeController> logger, IAppConfig appConfig, PlaylistContext playlistContext)
         {
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
             _appConfig = appConfig ?? throw new ArgumentNullException(nameof(appConfig));
-            _playlistLoader = playlistLoader ?? throw new ArgumentNullException(nameof(playlistLoader));
+            _playlistContext = playlistContext ?? throw new ArgumentNullException(nameof(playlistContext));
         }
 
         public async Task<IActionResult> Index()
         {
-            var tracks = await _playlistLoader.LoadPlaylistFromUrl(_appConfig.TV7Url);
-            var model = new HomeModel(tracks);
+            var playlistEntries = await _playlistContext.PlaylistEntries.AsNoTracking().OrderBy(e => e.TrackNumber).ToListAsync();
+            var model = new HomeModel(playlistEntries);
 
             return View(model);
         }

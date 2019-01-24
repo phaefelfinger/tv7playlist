@@ -29,6 +29,8 @@ namespace Tv7Playlist.Data.Migrations
 
                     b.Property<string>("NameOverride");
 
+                    b.Property<int>("Position");
+
                     b.Property<int>("TrackNumber");
 
                     b.Property<string>("Url");

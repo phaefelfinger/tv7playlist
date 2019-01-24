@@ -6,6 +6,7 @@ namespace Tv7Playlist.Data
     {
         public Guid Id { get; set; }
 
+        public int Position { get; set; }
         public int TrackNumber { get; set; }
 
         public string Name { get; set; }

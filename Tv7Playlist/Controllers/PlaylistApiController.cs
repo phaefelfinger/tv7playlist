@@ -20,8 +20,8 @@ namespace Tv7Playlist.Controllers
         private readonly PlaylistContext _playlistContext;
         private readonly IPlaylistLoader _playlistLoader;
 
-        public PlaylistApiController(ILogger<HomeController> logger, PlaylistContext playlistContext,
-            IPlaylistLoader playlistLoader, IAppConfig appConfig)
+        public PlaylistApiController(ILogger<HomeController> logger, PlaylistContext playlistContext, IPlaylistLoader playlistLoader,
+            IAppConfig appConfig)
         {
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
             _playlistContext = playlistContext ?? throw new ArgumentNullException(nameof(playlistContext));
@@ -36,9 +36,12 @@ namespace Tv7Playlist.Controllers
             //TODO: Refactor to post method
             _logger.LogDebug("Synchronizing playlist from server...");
 
+            var existingEntries = await _playlistContext.PlaylistEntries.ToDictionaryAsync(e => e.TrackNumber);
             var tracks = await _playlistLoader.LoadPlaylistFromUrl(_appConfig.TV7Url);
-            await MarkNotAvailableEntriesAsync(tracks);
-            await AddOrUpdateEntriesAsync(tracks);
+
+            MarkNotAvailableEntries(existingEntries, tracks);
+            AddOrUpdateEntries(existingEntries, tracks);
+
             _logger.LogDebug("Synchronizing playlist completed saving changes...");
 
             await _playlistContext.SaveChangesAsync();
@@ -47,16 +50,22 @@ namespace Tv7Playlist.Controllers
             return Ok();
         }
 
-        private async Task AddOrUpdateEntriesAsync(IEnumerable<ParsedTrack> tracks)
+        private void AddOrUpdateEntries(Dictionary<int, PlaylistEntry> existingEntries, IEnumerable<ParsedTrack> tracks)
         {
             foreach (var track in tracks)
             {
-                var entry = await _playlistContext.PlaylistEntries.Where(e => e.TrackNumber == track.Id).FirstOrDefaultAsync();
-                if (entry == null)
+                if (!existingEntries.TryGetValue(track.Id, out var entry))
                 {
                     _logger.LogInformation($"Adding playlist entry {track.Id} - {track.Name}");
-                    entry = new PlaylistEntry {Id = Guid.NewGuid(), TrackNumber = track.Id, IsEnabled = true};
+                    entry = new PlaylistEntry
+                    {
+                        Id = Guid.NewGuid(), Position = track.Id, TrackNumber = track.Id, IsEnabled = true
+                    };
                     _playlistContext.PlaylistEntries.Add(entry);
+                }
+                else
+                {
+                    _logger.LogInformation($"Updating playlist entry {track.Id} - {track.Name}");
                 }
 
                 entry.IsAvailable = true;
@@ -65,10 +74,10 @@ namespace Tv7Playlist.Controllers
             }
         }
 
-        private async Task MarkNotAvailableEntriesAsync(IReadOnlyCollection<ParsedTrack> tracks)
+        private void MarkNotAvailableEntries(Dictionary<int, PlaylistEntry> existingEntries,
+            IReadOnlyCollection<ParsedTrack> tracks)
         {
-            var unavailableEntries =
-                await _playlistContext.PlaylistEntries.Where(e => tracks.All(t => t.Id != e.TrackNumber)).ToListAsync();
+            var unavailableEntries = existingEntries.Where(e => tracks.All(t => t.Id != e.Key)).Select(e => e.Value);
             foreach (var entry in unavailableEntries)
             {
                 _logger.LogInformation($"Channel {entry.TrackNumber} - {entry.Name} is no longer available.");
