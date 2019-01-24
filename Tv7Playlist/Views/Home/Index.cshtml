@@ -3,18 +3,25 @@
     ViewData["Title"] = "TV7 Playlist";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<table class="table table-hover table-striped">
+    <tr>
+        <th>Position</th>
+        <th>Number</th>
+        <th>Name</th>
+        <th>Name override</th>
+        <th>Enabled</th>
+        <th>URL</th>
+    </tr>
 
-<table>
-@{
+    @{
     foreach (var track in Model.Tracks)
     {
         <tr>
+            <td></td>
             <td>@track.Id</td>
             <td>@track.Name</td>
+            <td></td>
+            <td></td>
             <td>@track.Url</td>
         </tr>
     }
