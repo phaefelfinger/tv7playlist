@@ -8,25 +8,38 @@ namespace Tv7Playlist.Data.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                "PlaylistEntries",
-                table => new
+                name: "PlaylistEntries",
+                columns: table => new
                 {
                     Id = table.Column<Guid>(nullable: false),
                     TrackNumber = table.Column<int>(nullable: false),
                     Name = table.Column<string>(nullable: true),
-                    Url = table.Column<string>(nullable: true)
+                    NameOverride = table.Column<string>(nullable: true),
+                    Url = table.Column<string>(nullable: true),
+                    IsAvailable = table.Column<bool>(nullable: false),
+                    IsEnabled = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_PlaylistEntries", x => x.Id);
-                    table.UniqueConstraint("AK_PlaylistEntries_TrackNumber", x => x.TrackNumber);
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_PlaylistEntries_Name",
+                table: "PlaylistEntries",
+                column: "Name");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_PlaylistEntries_TrackNumber",
+                table: "PlaylistEntries",
+                column: "TrackNumber",
+                unique: true);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                "PlaylistEntries");
+                name: "PlaylistEntries");
         }
     }
 }

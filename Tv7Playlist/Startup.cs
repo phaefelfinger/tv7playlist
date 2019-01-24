@@ -60,6 +60,9 @@ namespace Tv7Playlist
                 app.UseHsts();
             }
 
+            InitializeDatabase(app);
+
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
@@ -70,6 +73,14 @@ namespace Tv7Playlist
                     "default",
                     "{controller=Home}/{action=Index}/{id?}");
             });
+        }
+
+        private void InitializeDatabase(IApplicationBuilder app)
+        {
+            using (var scope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+            {
+                scope.ServiceProvider.GetRequiredService<PlaylistContext>().Database.Migrate();
+            }
         }
 
         private void ConfigureParser(IServiceCollection services, IAppConfig appConfig)

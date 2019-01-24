@@ -9,8 +9,8 @@ using Tv7Playlist.Data;
 namespace Tv7Playlist.Data.Migrations
 {
     [DbContext(typeof(PlaylistContext))]
-    [Migration("20190124221302_AddedEnabledAvailableNameOverride")]
-    partial class AddedEnabledAvailableNameOverride
+    [Migration("20190124230424_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
