@@ -112,9 +112,7 @@ namespace Tv7Playlist
 
         private static void ConfigureDatabase(IServiceCollection services, IAppConfig appConfig)
         {
-            //TODO: Move to settings to make it configurable within docker.
-            var connection = "Data Source=playlist.db";
-            services.AddDbContext<PlaylistContext>(options => options.UseSqlite(connection));
+            services.AddDbContext<PlaylistContext>(options => options.UseSqlite(appConfig.SqLiteConnectionString));
         }
 
         private void LogConfiguration(IAppConfig appConfig)

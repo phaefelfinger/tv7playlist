@@ -3,9 +3,8 @@ using Tv7Playlist.Core;
 
 namespace Tv7Playlist
 {
-    public class AppConfig : IAppConfig
+    internal class AppConfig : IAppConfig
     {
-       
         private string _tv7Url;
         private string _udpxyUrl;
 
@@ -34,5 +33,7 @@ namespace Tv7Playlist
         }
 
         public string DownloadFileName { get; set; }
+
+        public string SqLiteConnectionString { get; set; }
     }
 }

@@ -9,5 +9,7 @@ namespace Tv7Playlist.Core
         string UdpxyUrl { get; set; }
 
         string DownloadFileName { get; set; }
+
+        string SqLiteConnectionString { get; set; }
     }
 }
