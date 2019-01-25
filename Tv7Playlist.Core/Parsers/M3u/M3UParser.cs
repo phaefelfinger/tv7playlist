@@ -8,8 +8,6 @@ namespace Tv7Playlist.Core.Parsers.M3u
 {
     public class M3UParser : IPlaylistParser
     {
-        private const string ExtInfStartTag = "#EXTINF:";
-        private const string ExtFileStartTag = "#EXTM3U";
         private const int IdStartNumber = 1000;
         private const int IdIncrementNumber = 5;
 
@@ -24,7 +22,7 @@ namespace Tv7Playlist.Core.Parsers.M3u
         {
             if (stream == null) throw new ArgumentNullException(nameof(stream));
 
-            _logger.LogInformation(LoggingEvents.ParsingM3uPlayList, "Parsing m3u file content");
+            _logger.LogInformation(LoggingEvents.ParsingM3UPlayList, "Parsing m3u file content");
             
             EnsureStreamIsAtBeginning(stream);
             
@@ -32,7 +30,7 @@ namespace Tv7Playlist.Core.Parsers.M3u
             {
                 var tracks = await ParseTracksFromStreamAsync(reader);
                 
-                _logger.LogInformation(LoggingEvents.ParsingM3uPlayList, "Parsing m3u file finished");
+                _logger.LogInformation(LoggingEvents.ParsingM3UPlayList, "Parsing m3u file finished");
 
                 return tracks;
             }
@@ -44,7 +42,7 @@ namespace Tv7Playlist.Core.Parsers.M3u
 
             if (!await StreamHasValidStartTagAsync(reader))
             {
-                _logger.LogError(LoggingEvents.ParsingM3uPlayList, $"Could not parse stream as it did not start with {ExtFileStartTag}");
+                _logger.LogError(LoggingEvents.ParsingM3UPlayList, $"Could not parse stream as it did not start with {M3UConstants.ExtFileStartTag}");
                 return new List<ParsedTrack>(300);
             }
 
@@ -63,7 +61,7 @@ namespace Tv7Playlist.Core.Parsers.M3u
         private static async Task<bool> StreamHasValidStartTagAsync(StreamReader reader)
         {
             var startLine = await ReadLineSafeAsync(reader);
-            var stramHasValidStartTag = !startLine.Trim().ToUpper().Equals(ExtInfStartTag);
+            var stramHasValidStartTag = !startLine.Trim().ToUpper().Equals(M3UConstants.ExtInfStartTag);
             return stramHasValidStartTag;
         }
 
@@ -71,7 +69,7 @@ namespace Tv7Playlist.Core.Parsers.M3u
         {
             if (stream.Position == 0) return;
             
-            _logger.LogWarning(LoggingEvents.ParsingM3uPlayList, "Stream not positioned at the beginning. Repositioning!");
+            _logger.LogWarning(LoggingEvents.ParsingM3UPlayList, "Stream not positioned at the beginning. Repositioning!");
             stream.Position = 0;
         }
 
@@ -82,9 +80,9 @@ namespace Tv7Playlist.Core.Parsers.M3u
             if (currentId <= 0) throw new ArgumentOutOfRangeException(nameof(currentId));
 
             var metaLine = await ReadLineSafeAsync(reader);            
-            if (!metaLine.StartsWith(ExtInfStartTag))
+            if (!metaLine.StartsWith(M3UConstants.ExtInfStartTag))
             {
-                _logger.LogDebug(LoggingEvents.ParsingM3uPlayList,
+                _logger.LogDebug(LoggingEvents.ParsingM3UPlayList,
                     "Line {lineNumber} {metaLine} is not a valid start channel start line",
                     currentId.ToString(), metaLine);
                 return;
@@ -95,11 +93,11 @@ namespace Tv7Playlist.Core.Parsers.M3u
             if (track != null)
             {
                 tracks.Add(track);
-                _logger.LogDebug(LoggingEvents.ParsingM3uPlayList, "Parsed track {track}", track);
+                _logger.LogDebug(LoggingEvents.ParsingM3UPlayList, "Parsed track {track}", track);
             }
             else
             {
-                _logger.LogWarning(LoggingEvents.ParsingM3uPlayList,
+                _logger.LogWarning(LoggingEvents.ParsingM3UPlayList,
                     "Could not parse lines {metaLine} with url {url}", metaLine, url);
             }
         }
@@ -123,7 +121,7 @@ namespace Tv7Playlist.Core.Parsers.M3u
 
             //TODO: Check line parsing of https://github.com/tellytv/telly/blob/dev/internal/m3uplus/main.go
             //format is base for telly to export.
-            var fields = metaLine.Replace(ExtInfStartTag, string.Empty).Split(',');
+            var fields = metaLine.Replace(M3UConstants.ExtInfStartTag, string.Empty).Split(',');
             var name = fields.Length >= 2 ? fields[1] : $"{currentId}-unknown";
             
             return new ParsedTrack(currentId, name, url);

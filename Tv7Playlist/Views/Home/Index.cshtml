@@ -2,30 +2,37 @@
 @{
     ViewData["Title"] = "TV7 Playlist";
 }
+<div class="row">
+    <div class="col col-12">
+        <table class="table table-hover table-striped">
+            <tr>
+                <th>Position</th>
+                <th>Number</th>
+                <th>Number override</th>
+                <th>Name</th>
+                <th>Name override</th>
+                <th>Enabled</th>
+                <th>Available</th>
+                <th>URL</th>
+                <th>original URL</th>
+            </tr>
 
-<table class="table table-hover table-striped">
-    <tr>
-        <th>Position</th>
-        <th>Number</th>
-        <th>Name</th>
-        <th>Name override</th>
-        <th>Enabled</th>
-        <th>Available</th>
-        <th>URL</th>
-    </tr>
-
-    @{
-    foreach (var track in Model.PlaylistEntries)
-    {
-        <tr>
-            <td>@track.Position</td>
-            <td>@track.TrackNumber</td>
-            <td>@track.Name</td>
-            <td>@track.NameOverride</td>
-            <td>@track.IsEnabled</td>
-            <td>@track.IsAvailable</td>
-            <td>@track.Url</td>
-        </tr>
-    }
-}
-</table>
+            @{
+                foreach (var track in Model.PlaylistEntries)
+                {
+                    <tr>
+                        <td>@track.Position</td>
+                        <td>@track.TrackNumber</td>
+                        <td>@track.TrackNumberOverride</td>
+                        <td>@track.Name</td>
+                        <td>@track.NameOverride</td>
+                        <td>@track.IsEnabled</td>
+                        <td>@track.IsAvailable</td>
+                        <td>@track.Url</td>
+                        <td>@track.UrlOriginal</td>
+                    </tr>
+                }
+            }
+        </table>
+    </div>
+</div>

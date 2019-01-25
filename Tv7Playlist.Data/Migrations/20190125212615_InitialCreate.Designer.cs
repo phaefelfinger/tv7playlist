@@ -9,14 +9,14 @@ using Tv7Playlist.Data;
 namespace Tv7Playlist.Data.Migrations
 {
     [DbContext(typeof(PlaylistContext))]
-    [Migration("20190124231927_InitialCreate")]
+    [Migration("20190125212615_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.2.0-rtm-35687");
+                .HasAnnotation("ProductVersion", "2.2.1-servicing-10028");
 
             modelBuilder.Entity("Tv7Playlist.Data.PlaylistEntry", b =>
                 {
@@ -35,7 +35,11 @@ namespace Tv7Playlist.Data.Migrations
 
                     b.Property<int>("TrackNumber");
 
+                    b.Property<int>("TrackNumberOverride");
+
                     b.Property<string>("Url");
+
+                    b.Property<string>("UrlOriginal");
 
                     b.HasKey("Id");
 

@@ -86,6 +86,8 @@ namespace Tv7Playlist
         private void ConfigureParser(IServiceCollection services, IAppConfig appConfig)
         {
             services.AddTransient<IPlaylistLoader, PlaylistLoader>();
+            services.AddTransient<IPlaylistBuilder, PlaylistBuilder>();
+            services.AddTransient<IPlaylistSynchronizer, PlaylistSynchronizer>();
 
             var type = appConfig.SourceType;
             switch (type)

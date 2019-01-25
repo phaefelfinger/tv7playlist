@@ -14,9 +14,11 @@ namespace Tv7Playlist.Data.Migrations
                     Id = table.Column<Guid>(nullable: false),
                     Position = table.Column<int>(nullable: false),
                     TrackNumber = table.Column<int>(nullable: false),
+                    TrackNumberOverride = table.Column<int>(nullable: false),
                     Name = table.Column<string>(nullable: true),
                     NameOverride = table.Column<string>(nullable: true),
                     Url = table.Column<string>(nullable: true),
+                    UrlOriginal = table.Column<string>(nullable: true),
                     IsAvailable = table.Column<bool>(nullable: false),
                     IsEnabled = table.Column<bool>(nullable: false)
                 },
