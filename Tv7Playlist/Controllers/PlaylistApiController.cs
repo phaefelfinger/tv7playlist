@@ -16,13 +16,11 @@ namespace Tv7Playlist.Controllers
         private readonly ILogger<HomeController> _logger;
 
         private readonly IPlaylistBuilder _playlistBuilder;
-        private readonly IPlaylistSynchronizer _playlistSynchronizer;
 
         public PlaylistApiController(ILogger<HomeController> logger, IPlaylistSynchronizer playlistSynchronizer,
             IPlaylistBuilder playlistBuilder, IAppConfig appConfig)
         {
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
-            _playlistSynchronizer = playlistSynchronizer ?? throw new ArgumentNullException(nameof(playlistSynchronizer));
             _playlistBuilder = playlistBuilder ?? throw new ArgumentNullException(nameof(playlistBuilder));
             _appConfig = appConfig ?? throw new ArgumentNullException(nameof(appConfig));
         }
@@ -42,15 +40,6 @@ namespace Tv7Playlist.Controllers
                 FileDownloadName = downloadFileName
             };
         }
-
-        [HttpPost]
-        [Route("")]
-        public async Task<IActionResult> Synchronize()
-        {
-            await _playlistSynchronizer.SynchronizeAsync();
-            return Ok();
-        }
-
 
         private string GetDownloadFileName()
         {

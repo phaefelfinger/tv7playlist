@@ -2,10 +2,12 @@
 @{
     ViewData["Title"] = "TV7 Playlist";
 }
+
 <div class="row">
     <div class="col col-12">
         <table class="table table-hover table-striped">
             <tr>
+                <th></th>
                 <th>Number</th>
                 <th>Number override</th>
                 <th>Position</th>
@@ -21,6 +23,7 @@
                 foreach (var track in Model.PlaylistEntries)
                 {
                     <tr>
+                        <td><a class="btn btn-secondary" asp-area="" asp-controller="PlaylistEntry" asp-action="Edit" asp-route-id="@track.Id">Edit</a></td>
                         <td>@track.TrackNumber</td>
                         <td>@(track.TrackNumberOverride==0?string.Empty:track.TrackNumberOverride.ToString())</td>
                         <td>@track.Position</td>
