@@ -14,11 +14,13 @@ namespace Tv7Playlist.Controllers
     {
         private readonly PlaylistContext _playlistContext;
         private readonly IPlaylistSynchronizer _playlistSynchronizer;
+        private readonly IAppConfig _appConfig;
 
-        public HomeController(PlaylistContext playlistContext, IPlaylistSynchronizer playlistSynchronizer)
+        public HomeController(PlaylistContext playlistContext, IPlaylistSynchronizer playlistSynchronizer, IAppConfig appConfig)
         {
             _playlistContext = playlistContext ?? throw new ArgumentNullException(nameof(playlistContext));
             _playlistSynchronizer = playlistSynchronizer ?? throw new ArgumentNullException(nameof(playlistSynchronizer));
+            _appConfig = appConfig ?? throw new ArgumentNullException(nameof(appConfig));
         }
 
         [HttpGet]
@@ -42,6 +44,14 @@ namespace Tv7Playlist.Controllers
         [HttpGet]
         [Route("synchronize")]
         public async Task<IActionResult> Synchronize()
+        {
+            var homeSynchronizeModel = new HomeSynchronizeModel(_appConfig.TV7Url);
+            return View(homeSynchronizeModel);
+        }
+
+        [HttpPost]
+        [Route("synchronize")]
+        public async Task<IActionResult> Synchronize(bool ok)
         {
             await _playlistSynchronizer.SynchronizeAsync();
             

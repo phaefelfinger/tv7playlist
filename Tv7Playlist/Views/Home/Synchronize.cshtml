@@ -1,0 +1,28 @@
+@model HomeSynchronizeModel;
+@{
+    ViewData["Title"] = "TV7 Playlist - Synchronize";
+}
+
+<div class="row">
+    <div class="col offset-3 col-7">
+        <h3>Synchronize TV7 playlist</h3>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col offset-3 col-1">
+        Synchronization URL: 
+    </div>
+    <div class="col col-2">
+        @Model.SynchronizationUrl 
+    </div>
+</div>
+
+<div class="row">
+    <div class="col offset-3 col-7">
+        <form asp-action="Synchronize">
+            <input type="hidden" id="ok" value="true"/>
+            <input type="submit" value="Run Synchronization" class="btn btn-primary"/>
+        </form>
+    </div>
+</div>
