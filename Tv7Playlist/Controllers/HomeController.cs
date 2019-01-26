@@ -43,7 +43,7 @@ namespace Tv7Playlist.Controllers
 
         [HttpGet]
         [Route("synchronize")]
-        public async Task<IActionResult> Synchronize()
+        public IActionResult Synchronize()
         {
             var homeSynchronizeModel = new HomeSynchronizeModel(_appConfig.TV7Url);
             return View(homeSynchronizeModel);
