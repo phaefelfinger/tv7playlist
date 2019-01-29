@@ -51,7 +51,9 @@ namespace Tv7Playlist.Core
             var number = entry.TrackNumberOverride != 0 ? entry.TrackNumberOverride : entry.TrackNumber;
             var name = !string.IsNullOrWhiteSpace(entry.NameOverride) ? entry.NameOverride : entry.Name;
             
-            var extInfo = $"{M3UConstants.ExtInfStartTag}{duration},{number},{name}";
+            //var extInfo = $"{M3UConstants.ExtInfStartTag}{duration},{number},{name}";
+            //TODO: check tagformat and how to serialize them
+            var extInfo = $"{M3UConstants.ExtInfStartTag}{duration},{name}";
             await outWriter.WriteLineAsync(extInfo);
             await outWriter.WriteLineAsync(entry.Url);
         }
