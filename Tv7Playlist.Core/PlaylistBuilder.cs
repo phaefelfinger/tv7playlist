@@ -49,7 +49,9 @@ namespace Tv7Playlist.Core
         {
             const int duration = -1;
             var number = entry.TrackNumberOverride != 0 ? entry.TrackNumberOverride : entry.TrackNumber;
-            var extInfo = $"{M3UConstants.ExtInfStartTag}{duration},{number},{entry.Name}";
+            var name = !string.IsNullOrWhiteSpace(entry.NameOverride) ? entry.NameOverride : entry.Name;
+            
+            var extInfo = $"{M3UConstants.ExtInfStartTag}{duration},{number},{name}";
             await outWriter.WriteLineAsync(extInfo);
             await outWriter.WriteLineAsync(entry.Url);
         }
