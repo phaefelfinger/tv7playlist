@@ -22,24 +22,34 @@
             </tr>
 
             @{
-                foreach (var track in Model.PlaylistEntries)
+                foreach (var channel in Model.PlaylistEntries)
                 {
                     <tr>
                         <td>
-                            <a class="btn btn-secondary" asp-area="" asp-controller="PlaylistEntry" asp-action="Edit" asp-route-id="@track.Id">Edit</a>
-                            <a class="btn btn-danger" asp-area="" asp-controller="PlaylistEntry" asp-action="Delete" asp-route-id="@track.Id">Delete</a>
+                            <a class="btn btn-secondary" asp-area="" asp-controller="PlaylistEntry" asp-action="Edit" asp-route-id="@channel.Id">Edit</a>
+                            <a class="btn btn-danger" asp-area="" asp-controller="PlaylistEntry" asp-action="Delete" asp-route-id="@channel.Id">Delete</a>
+                            @{
+                                if (channel.IsEnabled)
+                                {
+                                    <a class="btn btn-warning" asp-area="" asp-controller="PlaylistEntry" asp-action="ToggleEnabled" asp-route-id="@channel.Id">Disable</a>
+                                }
+                                else
+                                {
+                                    <a class="btn btn-info" asp-area="" asp-controller="PlaylistEntry" asp-action="ToggleEnabled" asp-route-id="@channel.Id">Enable</a>
+                                }
+                            }
                         </td>
-                        <td>@track.ChannelNumberImport</td>
-                        <td>@track.ChannelNumberExport</td>
-                        <td>@track.Position</td>
-                        <td>@track.Name</td>
-                        <td>@track.EpgMatchName</td>
-                        <td>@track.IsEnabled</td>
-                        <td>@track.IsAvailable</td>
-                        <td>@track.UrlProxy</td>
-                        <td>@track.UrlOriginal</td>
-                        <td>@track.Created.ToString("g")</td>
-                        <td>@track.Modified.ToString("g")</td>
+                        <td>@channel.ChannelNumberImport</td>
+                        <td>@channel.ChannelNumberExport</td>
+                        <td>@channel.Position</td>
+                        <td>@channel.Name</td>
+                        <td>@channel.EpgMatchName</td>
+                        <td class="text-center">@Html.Raw(channel.IsEnabled ? "<span class=\"text-primary\">Enabled</span>" : "<span class=\"text-danger\">Disabled</span>")</td>
+                        <td class="text-center">@Html.Raw(channel.IsAvailable ? "<span class=\"text-primary\">yes</span>" : "<span class=\"text-danger\">no</span>")</td>
+                        <td>@channel.UrlProxy</td>
+                        <td>@channel.UrlOriginal</td>
+                        <td>@channel.Created.ToString("g")</td>
+                        <td>@channel.Modified.ToString("g")</td>
                     </tr>
                 }
             }

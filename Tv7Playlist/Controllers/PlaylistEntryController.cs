@@ -55,6 +55,18 @@ namespace Tv7Playlist.Controllers
             return View(updatedEntry);
         }
 
+        [HttpGet]
+        public async Task<IActionResult> ToggleEnabled(Guid? id)
+        {
+            var entry = await _playlistContext.PlaylistEntries.FindAsync(id);
+            if (entry == null) return NotFound();
+
+            entry.IsEnabled = !entry.IsEnabled;
+            
+            await _playlistContext.SaveChangesAsync();
+
+            return RedirectToAction("Index", "Home");
+        }
 
         [HttpGet]
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
