@@ -26,10 +26,29 @@ namespace Tv7Playlist.Controllers
         }
 
         [HttpGet]
+        [Route("without-proxy")]
+        public async Task<IActionResult> GetPlaylistWithoutProxy()
+        {
+            return await GetPlaylistInternal(false);
+        }
+
+        [HttpGet]
         [Route("")]
         public async Task<IActionResult> GetPlaylist()
         {
-            var playlistStream = await _playlistBuilder.GeneratePlaylistAsync();
+            return await GetPlaylistInternal(true);
+        }
+
+        [HttpGet]
+        [Route("with-proxy")]
+        public async Task<IActionResult> GetPlaylistWithProxy()
+        {
+            return await GetPlaylistInternal(true);
+        }
+
+        private async Task<IActionResult> GetPlaylistInternal(bool useProxy)
+        {
+            var playlistStream = await _playlistBuilder.GeneratePlaylistAsync(useProxy);
             var downloadFileName = GetDownloadFileName();
 
             _logger.LogInformation(LoggingEvents.Playlist, "Sending updated playlist {filename}",

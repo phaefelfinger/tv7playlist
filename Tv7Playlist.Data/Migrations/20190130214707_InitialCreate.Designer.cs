@@ -9,7 +9,7 @@ using Tv7Playlist.Data;
 namespace Tv7Playlist.Data.Migrations
 {
     [DbContext(typeof(PlaylistContext))]
-    [Migration("20190125212615_InitialCreate")]
+    [Migration("20190130214707_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -23,30 +23,36 @@ namespace Tv7Playlist.Data.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<int>("ChannelNumberExport");
+
+                    b.Property<int>("ChannelNumberImport");
+
+                    b.Property<DateTime>("Created");
+
+                    b.Property<string>("EpgMatchName");
+
                     b.Property<bool>("IsAvailable");
 
                     b.Property<bool>("IsEnabled");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("LogoUrl");
 
-                    b.Property<string>("NameOverride");
+                    b.Property<DateTime>("Modified");
+
+                    b.Property<string>("Name");
 
                     b.Property<int>("Position");
 
-                    b.Property<int>("TrackNumber");
-
-                    b.Property<int>("TrackNumberOverride");
-
-                    b.Property<string>("Url");
-
                     b.Property<string>("UrlOriginal");
+
+                    b.Property<string>("UrlProxy");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Name");
-
-                    b.HasIndex("TrackNumber")
+                    b.HasIndex("ChannelNumberImport")
                         .IsUnique();
+
+                    b.HasIndex("Name");
 
                     b.ToTable("PlaylistEntries");
                 });

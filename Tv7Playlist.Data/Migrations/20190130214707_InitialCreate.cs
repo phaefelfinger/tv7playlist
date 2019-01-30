@@ -13,14 +13,17 @@ namespace Tv7Playlist.Data.Migrations
                 {
                     Id = table.Column<Guid>(nullable: false),
                     Position = table.Column<int>(nullable: false),
-                    TrackNumber = table.Column<int>(nullable: false),
-                    TrackNumberOverride = table.Column<int>(nullable: false),
+                    ChannelNumberImport = table.Column<int>(nullable: false),
+                    ChannelNumberExport = table.Column<int>(nullable: false),
                     Name = table.Column<string>(nullable: true),
-                    NameOverride = table.Column<string>(nullable: true),
-                    Url = table.Column<string>(nullable: true),
+                    EpgMatchName = table.Column<string>(nullable: true),
+                    UrlProxy = table.Column<string>(nullable: true),
                     UrlOriginal = table.Column<string>(nullable: true),
+                    LogoUrl = table.Column<string>(nullable: true),
                     IsAvailable = table.Column<bool>(nullable: false),
-                    IsEnabled = table.Column<bool>(nullable: false)
+                    IsEnabled = table.Column<bool>(nullable: false),
+                    Created = table.Column<DateTime>(nullable: false),
+                    Modified = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -28,15 +31,15 @@ namespace Tv7Playlist.Data.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_PlaylistEntries_ChannelNumberImport",
+                table: "PlaylistEntries",
+                column: "ChannelNumberImport",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
                 name: "IX_PlaylistEntries_Name",
                 table: "PlaylistEntries",
                 column: "Name");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_PlaylistEntries_TrackNumber",
-                table: "PlaylistEntries",
-                column: "TrackNumber",
-                unique: true);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

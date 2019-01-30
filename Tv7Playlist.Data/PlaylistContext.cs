@@ -17,7 +17,7 @@ namespace Tv7Playlist.Data
 
             var entityTypeBuilder = modelBuilder.Entity<PlaylistEntry>();
             entityTypeBuilder.HasKey(e => e.Id);
-            entityTypeBuilder.HasIndex(e => e.TrackNumber).IsUnique();
+            entityTypeBuilder.HasIndex(e => e.ChannelNumberImport).IsUnique();
             entityTypeBuilder.HasIndex(e => e.Name);
         }
     }

@@ -43,9 +43,11 @@ namespace Tv7Playlist.Controllers
                 if (entry == null) return NotFound();
 
                 entry.Position = updatedEntry.Position;
-                entry.TrackNumberOverride = updatedEntry.TrackNumberOverride;
-                entry.NameOverride = updatedEntry.NameOverride;
+                entry.ChannelNumberExport = updatedEntry.ChannelNumberExport;
+                entry.EpgMatchName = updatedEntry.EpgMatchName;
                 entry.IsEnabled = updatedEntry.IsEnabled;
+                entry.LogoUrl = updatedEntry.LogoUrl;
+                entry.Modified = DateTime.Now;
 
                 await _playlistContext.SaveChangesAsync();
 

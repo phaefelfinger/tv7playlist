@@ -5,6 +5,6 @@ namespace Tv7Playlist.Core
 {
     public interface IPlaylistBuilder
     {
-        Task<Stream> GeneratePlaylistAsync();
+        Task<Stream> GeneratePlaylistAsync(bool useProxy);
     }
 }

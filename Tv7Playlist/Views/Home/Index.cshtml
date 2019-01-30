@@ -8,15 +8,17 @@
         <table class="table table-hover table-striped">
             <tr>
                 <th></th>
-                <th>Number</th>
-                <th>Number override</th>
+                <th>Number Import</th>
+                <th>Number Export</th>
                 <th>Position</th>
                 <th>Name</th>
-                <th>Name override</th>
+                <th>EPG Name</th>
                 <th>Enabled</th>
                 <th>Available</th>
-                <th>URL</th>
-                <th>original URL</th>
+                <th>URL Proxy</th>
+                <th>URL Original</th>
+                <th>Created</th>
+                <th>Modified</th>
             </tr>
 
             @{
@@ -24,15 +26,17 @@
                 {
                     <tr>
                         <td><a class="btn btn-secondary" asp-area="" asp-controller="PlaylistEntry" asp-action="Edit" asp-route-id="@track.Id">Edit</a></td>
-                        <td>@track.TrackNumber</td>
-                        <td>@(track.TrackNumberOverride==0?string.Empty:track.TrackNumberOverride.ToString())</td>
+                        <td>@track.ChannelNumberImport</td>
+                        <td>@track.ChannelNumberExport</td>
                         <td>@track.Position</td>
                         <td>@track.Name</td>
-                        <td>@track.NameOverride</td>
+                        <td>@track.EpgMatchName</td>
                         <td>@track.IsEnabled</td>
                         <td>@track.IsAvailable</td>
-                        <td>@track.Url</td>
+                        <td>@track.UrlProxy</td>
                         <td>@track.UrlOriginal</td>
+                        <td>@track.Created.ToString("g")</td>
+                        <td>@track.Modified.ToString("g")</td>
                     </tr>
                 }
             }

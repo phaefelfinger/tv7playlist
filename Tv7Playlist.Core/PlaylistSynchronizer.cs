@@ -36,7 +36,7 @@ namespace Tv7Playlist.Core
             _logger.LogDebug(LoggingEvents.Synchronize, "Synchronizing playlist from server...");
 
             var tv7Url = GetTv7SourceUrl();
-            var existingEntries = await _playlistContext.PlaylistEntries.ToDictionaryAsync(e => e.TrackNumber);
+            var existingEntries = await _playlistContext.PlaylistEntries.ToDictionaryAsync(e => e.ChannelNumberImport);
             var tracks = await _playlistLoader.LoadPlaylistFromUrl(tv7Url);
 
             MarkNotAvailableEntries(existingEntries, tracks);
@@ -57,7 +57,13 @@ namespace Tv7Playlist.Core
                     _logger.LogInformation(LoggingEvents.Synchronize, $"Adding playlist entry {track.Id} - {track.Name}");
                     entry = new PlaylistEntry
                     {
-                        Id = Guid.NewGuid(), Position = track.Id, TrackNumber = track.Id, IsEnabled = true
+                        Id = Guid.NewGuid(), 
+                        Position = track.Id,
+                        ChannelNumberImport = track.Id,
+                        ChannelNumberExport = track.Id,
+                        EpgMatchName = track.Name?.Replace(" ",string.Empty),
+                        IsEnabled = false,
+                        Created = DateTime.Now
                     };
                     _playlistContext.PlaylistEntries.Add(entry);
                 }
@@ -69,11 +75,12 @@ namespace Tv7Playlist.Core
                 entry.IsAvailable = true;
                 entry.Name = track.Name;
                 entry.UrlOriginal = track.Url;
-                entry.Url = BuildUrl(entry);
+                entry.UrlProxy = BuildProxiedUrl(entry);
+                entry.Modified = DateTime.Now;
             }
         }
 
-        private string BuildUrl(PlaylistEntry entry)
+        private string BuildProxiedUrl(PlaylistEntry entry)
         {
             return MultiCastRegex.Replace(entry.UrlOriginal, $"{_proxyUrl}/$2/");
         }
@@ -118,7 +125,7 @@ namespace Tv7Playlist.Core
             var unavailableEntries = existingEntries.Where(e => tracks.All(t => t.Id != e.Key)).Select(e => e.Value);
             foreach (var entry in unavailableEntries)
             {
-                _logger.LogInformation(LoggingEvents.Synchronize, $"Channel {entry.TrackNumber} - {entry.Name} is no longer available.");
+                _logger.LogInformation(LoggingEvents.Synchronize, $"Channel {entry.ChannelNumberImport} - {entry.Name} is no longer available.");
                 entry.IsAvailable = false;
             }
         }

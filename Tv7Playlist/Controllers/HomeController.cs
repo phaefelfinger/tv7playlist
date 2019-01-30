@@ -26,7 +26,7 @@ namespace Tv7Playlist.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            var playlistEntries = await _playlistContext.PlaylistEntries.AsNoTracking().OrderBy(e => e.TrackNumber).ToListAsync();
+            var playlistEntries = await _playlistContext.PlaylistEntries.AsNoTracking().OrderBy(e => e.Position).ToListAsync();
             var model = new HomeModel(playlistEntries);
 
             return View(model);
