@@ -25,7 +25,10 @@
                 foreach (var track in Model.PlaylistEntries)
                 {
                     <tr>
-                        <td><a class="btn btn-secondary" asp-area="" asp-controller="PlaylistEntry" asp-action="Edit" asp-route-id="@track.Id">Edit</a></td>
+                        <td>
+                            <a class="btn btn-secondary" asp-area="" asp-controller="PlaylistEntry" asp-action="Edit" asp-route-id="@track.Id">Edit</a>
+                            <a class="btn btn-danger" asp-area="" asp-controller="PlaylistEntry" asp-action="Delete" asp-route-id="@track.Id">Delete</a>
+                        </td>
                         <td>@track.ChannelNumberImport</td>
                         <td>@track.ChannelNumberExport</td>
                         <td>@track.Position</td>

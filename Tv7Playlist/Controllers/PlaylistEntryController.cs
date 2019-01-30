@@ -1,9 +1,7 @@
 using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Tv7Playlist.Core;
 using Tv7Playlist.Data;
-using Tv7Playlist.Models;
 
 namespace Tv7Playlist.Controllers
 {
@@ -31,7 +29,7 @@ namespace Tv7Playlist.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(Guid id, PlaylistEntry updatedEntry)
-        //[Bind("PlaylistEntry.Id,PlaylistEntry.Position,PlaylistEntry.TrackNumberOverride,PlaylistEntry.NameOverride,PlaylistEntry.IsEnabled")]
+            //[Bind("PlaylistEntry.Id,PlaylistEntry.Position,PlaylistEntry.TrackNumberOverride,PlaylistEntry.NameOverride,PlaylistEntry.IsEnabled")]
         {
             if (updatedEntry == null) return NotFound();
 
@@ -55,6 +53,36 @@ namespace Tv7Playlist.Controllers
             }
 
             return View(updatedEntry);
+        }
+
+
+        [HttpGet]
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public async Task<IActionResult> Delete(Guid? id)
+        {
+            if (id == null) return NotFound();
+
+            var entry = await _playlistContext.PlaylistEntries.FindAsync(id);
+            if (entry == null) return NotFound();
+
+            return View(entry);
+        }
+
+        [HttpPost]
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(Guid? id)
+        {
+            if (id == null) return NotFound();
+
+            var entry = await _playlistContext.PlaylistEntries.FindAsync(id);
+            if (entry == null) return NotFound();
+
+            _playlistContext.PlaylistEntries.Remove(entry);
+
+            await _playlistContext.SaveChangesAsync();
+
+            return RedirectToAction("Index", "Home");
         }
     }
 }
