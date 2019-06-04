@@ -12,8 +12,8 @@ There are more features than just changing the URL:
 
 - Resorting of the channel list
 - Enable or disable a channel
-- Override the channel number -> better EPG Detection support in plex
-- Override the channel name -> better EPG Detection support in plex
+- Override the channel number -> better EPG Detection support in plex / emby
+- Override the channel name -> better EPG Detection support in plex / emby
 
 This is licensed under GPLv2. See License file.
 
