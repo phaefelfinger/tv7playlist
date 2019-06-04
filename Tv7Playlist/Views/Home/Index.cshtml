@@ -3,56 +3,72 @@
     ViewData["Title"] = "TV7 Playlist";
 }
 
-<div class="row">
-    <div class="col col-12">
-        <table class="table table-hover table-striped">
-            <tr>
-                <th></th>
-                <th>Number Import</th>
-                <th>Number Export</th>
-                <th>Position</th>
-                <th>Name</th>
-                <th>EPG Name</th>
-                <th>Enabled</th>
-                <th>Available</th>
-                <th>URL Proxy</th>
-                <th>URL Original</th>
-                <th>Created</th>
-                <th>Modified</th>
-            </tr>
-
-            @{
-                foreach (var channel in Model.PlaylistEntries)
-                {
-                    <tr>
-                        <td>
-                            <a class="btn btn-secondary" asp-area="" asp-controller="PlaylistEntry" asp-action="Edit" asp-route-id="@channel.Id">Edit</a>
-                            <a class="btn btn-danger" asp-area="" asp-controller="PlaylistEntry" asp-action="Delete" asp-route-id="@channel.Id">Delete</a>
-                            @{
-                                if (channel.IsEnabled)
-                                {
-                                    <a class="btn btn-warning" asp-area="" asp-controller="PlaylistEntry" asp-action="ToggleEnabled" asp-route-id="@channel.Id">Disable</a>
-                                }
-                                else
-                                {
-                                    <a class="btn btn-info" asp-area="" asp-controller="PlaylistEntry" asp-action="ToggleEnabled" asp-route-id="@channel.Id">Enable</a>
-                                }
-                            }
-                        </td>
-                        <td>@channel.ChannelNumberImport</td>
-                        <td>@channel.ChannelNumberExport</td>
-                        <td>@channel.Position</td>
-                        <td>@channel.Name</td>
-                        <td>@channel.EpgMatchName</td>
-                        <td class="text-center">@Html.Raw(channel.IsEnabled ? "<span class=\"text-primary\">Enabled</span>" : "<span class=\"text-danger\">Disabled</span>")</td>
-                        <td class="text-center">@Html.Raw(channel.IsAvailable ? "<span class=\"text-primary\">yes</span>" : "<span class=\"text-danger\">no</span>")</td>
-                        <td>@channel.UrlProxy</td>
-                        <td>@channel.UrlOriginal</td>
-                        <td>@channel.Created.ToString("g")</td>
-                        <td>@channel.Modified.ToString("g")</td>
-                    </tr>
-                }
-            }
-        </table>
+<form method="post">
+    
+    <div class="row">
+        <div class="col col-4">
+            <button class="btn btn-warning" asp-action="DisableSelectedEntries" asp-controller="Home">Disable selected</button>
+            <button class="btn btn-info" asp-action="EnableSelectedEntries" asp-controller="Home">Enable selected</button>
+        </div>
     </div>
-</div>
+
+    <div class="row">
+        <div class="col col-12">
+            <table class="table table-hover table-striped">
+                <tr>
+                    <th>Selected</th>
+                    <th>Single Action</th>
+                    <th>Number Import</th>
+                    <th>Number Export</th>
+                    <th>Position</th>
+                    <th>Name</th>
+                    <th>EPG Name</th>
+                    <th>Enabled</th>
+                    <th>Available</th>
+                    <th>URL Proxy</th>
+                    <th>URL Original</th>
+                    <th>Created</th>
+                    <th>Modified</th>
+                </tr>
+
+                @{
+                    for (var i = 0; i < Model.PlaylistEntries.Count; i++)
+                    {
+                        @Html.HiddenFor(m => m.PlaylistEntries[i].Id)
+                        <tr>
+                            <td>
+                                <input asp-for="PlaylistEntries[i].Selected" type="checkbox" />
+                            </td>
+                            <td>
+                                <a class="btn btn-secondary" asp-area="" asp-controller="PlaylistEntry" asp-action="Edit" asp-route-id="@Model.PlaylistEntries[i].Id">Edit</a>
+                                <a class="btn btn-danger" asp-area="" asp-controller="PlaylistEntry" asp-action="Delete" asp-route-id="@Model.PlaylistEntries[i].Id">Delete</a>
+                                @{
+                                    if (Model.PlaylistEntries[i].Entry.IsEnabled)
+                                    {
+                                        <a class="btn btn-warning" asp-area="" asp-controller="PlaylistEntry" asp-action="ToggleEnabled" asp-route-id="@Model.PlaylistEntries[i].Id">Disable</a>
+                                    }
+                                    else
+                                    {
+                                        <a class="btn btn-info" asp-area="" asp-controller="PlaylistEntry" asp-action="ToggleEnabled" asp-route-id="@Model.PlaylistEntries[i].Id">Enable</a>
+                                    }
+                                }
+                            </td>
+                            <td>@Model.PlaylistEntries[i].Entry.ChannelNumberImport</td>
+                            <td>@Model.PlaylistEntries[i].Entry.ChannelNumberExport</td>
+                            <td>@Model.PlaylistEntries[i].Entry.Position</td>
+                            <td>@Model.PlaylistEntries[i].Entry.Name</td>
+                            <td>@Model.PlaylistEntries[i].Entry.EpgMatchName</td>
+                            <td class="text-center">@Html.Raw(Model.PlaylistEntries[i].Entry.IsEnabled ? "<span class=\"text-primary\">Enabled</span>" : "<span class=\"text-danger\">Disabled</span>")</td>
+                            <td class="text-center">@Html.Raw(Model.PlaylistEntries[i].Entry.IsAvailable ? "<span class=\"text-primary\">yes</span>" : "<span class=\"text-danger\">no</span>")</td>
+                            <td>@Model.PlaylistEntries[i].Entry.UrlProxy</td>
+                            <td>@Model.PlaylistEntries[i].Entry.UrlOriginal</td>
+                            <td>@Model.PlaylistEntries[i].Entry.Created.ToString("g")</td>
+                            <td>@Model.PlaylistEntries[i].Entry.Modified.ToString("g")</td>
+                        </tr>
+                    }
+                }
+            </table>
+        </div>
+    </div>
+
+</form>

@@ -1,16 +1,19 @@
 using System;
 using System.Collections.Generic;
-using Tv7Playlist.Data;
 
 namespace Tv7Playlist.Models
 {
     public class HomeModel
     {
-        public HomeModel(List<PlaylistEntry> playlistEntries)
+        public HomeModel()
+        {
+        }
+
+        public HomeModel(List<PlaylistEntryModel> playlistEntries)
         {
             PlaylistEntries = playlistEntries ?? throw new ArgumentNullException(nameof(playlistEntries));
         }
 
-        public List<PlaylistEntry> PlaylistEntries { get; }
+        public List<PlaylistEntryModel> PlaylistEntries { get; set; }
     }
 }

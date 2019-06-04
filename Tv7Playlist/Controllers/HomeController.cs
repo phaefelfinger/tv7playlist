@@ -12,9 +12,9 @@ namespace Tv7Playlist.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IAppConfig _appConfig;
         private readonly PlaylistContext _playlistContext;
         private readonly IPlaylistSynchronizer _playlistSynchronizer;
-        private readonly IAppConfig _appConfig;
 
         public HomeController(PlaylistContext playlistContext, IPlaylistSynchronizer playlistSynchronizer, IAppConfig appConfig)
         {
@@ -26,10 +26,27 @@ namespace Tv7Playlist.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            var playlistEntries = await _playlistContext.PlaylistEntries.AsNoTracking().OrderBy(e => e.Position).ToListAsync();
+            var playlistEntries = await _playlistContext.PlaylistEntries.AsNoTracking().OrderBy(e => e.Position)
+                .Select(e => new PlaylistEntryModel(e)).ToListAsync();
             var model = new HomeModel(playlistEntries);
 
             return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DisableSelectedEntries([FromForm] HomeModel model)
+        {
+            if (ModelState.IsValid) await UpdateEnabledForItems(model, false);
+
+            return Redirect("/");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EnableSelectedEntries([FromForm] HomeModel model)
+        {
+            if (ModelState.IsValid) await UpdateEnabledForItems(model, true);
+
+            return Redirect("/");
         }
 
         [HttpGet]
@@ -54,8 +71,23 @@ namespace Tv7Playlist.Controllers
         public async Task<IActionResult> Synchronize(bool ok)
         {
             await _playlistSynchronizer.SynchronizeAsync();
-            
+
             return RedirectToAction("Index", "Home");
+        }
+
+        private async Task UpdateEnabledForItems(HomeModel model, bool isEnabled)
+        {
+            if (model == null) throw new ArgumentNullException(nameof(model));
+            var idsToUpdate = model.PlaylistEntries.Where(e => e.Selected).Select(e => e.Id);
+            foreach (var id in idsToUpdate)
+            {
+                var entry = await _playlistContext.PlaylistEntries.FindAsync(id);
+                if (entry == null) continue;
+
+                entry.IsEnabled = isEnabled;
+            }
+
+            await _playlistContext.SaveChangesAsync();
         }
     }
 }
