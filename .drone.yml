@@ -5,6 +5,7 @@ pipeline:
     tags:
       - latest
       - 2.0
+      - 2.0.1
     secrets: [ docker_username, docker_password ]
     debug: true
     when:
