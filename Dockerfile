@@ -1,4 +1,4 @@
-FROM microsoft/dotnet:sdk AS build-env
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
 WORKDIR /app
 
 # Copy everything else and build
@@ -7,12 +7,12 @@ RUN dotnet restore Tv7Playlist.sln
 RUN dotnet publish -c Release -o out Tv7Playlist.sln
 
 # Build runtime image
-FROM microsoft/dotnet:aspnetcore-runtime
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.1
 
 WORKDIR /app
 RUN mkdir /data
 
-COPY --from=build-env /app/Tv7Playlist/out .
+COPY --from=build /app/out .
 
 ENV ASPNETCORE_URLS=http://+:80
 EXPOSE 80
