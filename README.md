@@ -18,6 +18,17 @@ There are more features than just changing the URL:
 
 This is licensed under GPLv2. See License file.
 
+## Possible breaking change of .net core 3.1.1 upgrade
+
+Something changed within the entity framework driver for SqLite. A guid is now stored as a text and not blob anymore.
+With the wrong datatype, you will get an error if you try to update a record.
+The latest version of this application has a migration built in that should convert the blobs to the values as text.
+The migrations are applied automatically.
+
+**Backup your database before starting the new version**
+
+A workaround might be clearing your database and rebuilding it by syncing the latest playlist from init7. 
+
 ## Docker
 
 ### Run the application
