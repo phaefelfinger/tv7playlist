@@ -1,13 +1,20 @@
-pipeline:
-  docker:
+kind: pipeline
+name: default
+
+steps:
+  - name: docker
     image: plugins/docker
-    repo: phaefelfinger/tv7playlist
-    tags:
-      - latest
-      - 2.0
-      - 2.0.1
-    secrets: [ docker_username, docker_password ]
-    debug: true
-    when:
-      event: push
-      branch: master
+    settings:
+      repo: phaefelfinger/tv7playlist
+      tags:
+        - latest
+        - '3.0'
+        - '3.0.0'
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
+
+trigger:
+  branch:
+    - master
