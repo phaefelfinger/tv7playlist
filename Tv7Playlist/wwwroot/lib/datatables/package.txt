@@ -1,0 +1,4 @@
+Datatables - 1.10.20
+Buttons - 1.6.1
+SearchPanes - 1.0.1
+Select - 1.3.1
