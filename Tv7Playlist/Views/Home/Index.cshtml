@@ -5,18 +5,20 @@
 
 <form method="post">
     
-    <div class="row">
-        <div class="col col-4">
-            <button class="btn btn-warning" asp-action="DisableSelectedEntries" asp-controller="Home">Disable selected</button>
-            <button class="btn btn-info" asp-action="EnableSelectedEntries" asp-controller="Home">Enable selected</button>
-        </div>
-    </div>
+    @* <div class="row"> *@
+    @*     <div class="col col-4"> *@
+    @*         <button class="btn btn-warning" asp-action="DisableSelectedEntries" asp-controller="Home">Disable selected</button> *@
+    @*         <button class="btn btn-info" asp-action="EnableSelectedEntries" asp-controller="Home">Enable selected</button> *@
+    @*     </div> *@
+    @* </div> *@
 
     <div class="row">
         <div class="col col-12">
-            <table class="table table-hover table-striped">
+            <table class="table table-hover table-striped" id="playlistTable">
+                <thead>
                 <tr>
-                    <th>Selected</th>
+                    <th></th>
+                    <th></th>
                     <th>Single Action</th>
                     <th>Number Import</th>
                     <th>Number Export</th>
@@ -30,15 +32,14 @@
                     <th>Created</th>
                     <th>Modified</th>
                 </tr>
-
+                </thead>
+                <tbody>
                 @{
                     for (var i = 0; i < Model.PlaylistEntries.Count; i++)
                     {
-                        @Html.HiddenFor(m => m.PlaylistEntries[i].Id)
                         <tr>
-                            <td>
-                                <input asp-for="PlaylistEntries[i].Selected" type="checkbox" />
-                            </td>
+                            <td></td>
+                            <td>@Model.PlaylistEntries[i].Id</td>
                             <td>
                                 <a class="btn btn-secondary" asp-area="" asp-controller="PlaylistEntry" asp-action="Edit" asp-route-id="@Model.PlaylistEntries[i].Id">Edit</a>
                                 <a class="btn btn-danger" asp-area="" asp-controller="PlaylistEntry" asp-action="Delete" asp-route-id="@Model.PlaylistEntries[i].Id">Delete</a>
@@ -67,8 +68,91 @@
                         </tr>
                     }
                 }
+                </tbody>
             </table>
         </div>
     </div>
-
+<script>
+$(document).ready(function() {
+    const table = $('#playlistTable').DataTable({
+        dom: 'Bfrtip',
+        columnDefs: [
+            {
+                orderable: false,
+                searchable: false,
+                className: 'select-checkbox',
+                targets:   [0]
+            },
+            {
+                visible: false,
+                targets:   [1]
+            },
+            {
+                orderable: false,
+                targets:   [2,10,11]
+            },
+            {
+                searchable: false,
+                targets:   [2,10,11,12,13]
+            },
+        ],
+        select: {
+            style:    'multi',
+            selector: 'td:first-child'
+        },
+        buttons: [
+            {
+                text: 'Select all',
+                action: function () {
+                    table.rows().select();
+                }
+            },
+            {
+                text: 'Select none',
+                action: function () {
+                    table.rows().deselect();
+                }
+            },
+            {
+                text: 'Disable selected',
+                action: function ( e, dt, node, config ) {
+                    alert(
+                        'Row data: '+
+                        JSON.stringify( dt.row( { selected: true } ).data() )
+                    );
+                },
+                enabled: false
+            },
+            {
+                text: 'Enable selected',
+                action: function ( e, dt, node, config ) {
+                 const ids = $.map(table.rows('.selected').data(), function (item) {
+                     return item[1]
+                 });
+                 alert(JSON.stringify( ids ));
+                },
+                enabled: false
+            },
+            {
+             text: 'Delete selected',
+             action: function ( e, dt, node, config ) {
+                 const ids = $.map(table.rows('.selected').data(), function (item) {
+                     return item[1]
+                 });
+                 alert(JSON.stringify( ids ));
+             },
+             enabled: false
+            }
+        ]
+    });
+    
+    table.on( 'select deselect', function () {
+            const selectedRows = table.rows( { selected: true } ).count();
+            table.button( 2 ).enable( selectedRows > 0 );
+            table.button( 3 ).enable( selectedRows > 0 );
+            table.button( 4 ).enable( selectedRows > 0 );
+        } );
+});
+</script>
 </form>
+
