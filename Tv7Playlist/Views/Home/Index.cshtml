@@ -1,4 +1,5 @@
-﻿@model HomeModel;
+﻿@using Microsoft.AspNetCore.Mvc.Routing
+@model HomeModel;
 @{
     ViewData["Title"] = "TV7 Playlist";
 }
@@ -116,20 +117,21 @@ $(document).ready(function() {
             {
                 text: 'Disable selected',
                 action: function ( e, dt, node, config ) {
-                    alert(
-                        'Row data: '+
-                        JSON.stringify( dt.row( { selected: true } ).data() )
-                    );
+                    const ids = $.map(table.rows('.selected').data(), function (item) {
+                        return item[1]
+                    });
+                    setEnabledForChannels(urlDisable, ids);
                 },
                 enabled: false
             },
             {
                 text: 'Enable selected',
                 action: function ( e, dt, node, config ) {
-                 const ids = $.map(table.rows('.selected').data(), function (item) {
-                     return item[1]
-                 });
-                 alert(JSON.stringify( ids ));
+                    const ids = $.map(table.rows('.selected').data(), function (item) {
+                        return item[1]
+                    });
+                    setEnabledForChannels(urlEnable, ids);
+
                 },
                 enabled: false
             },
@@ -153,6 +155,25 @@ $(document).ready(function() {
             table.button( 4 ).enable( selectedRows > 0 );
         } );
 });
+
+const urlEnable = '@Url.Action("EnableChannels","PlaylistApi")';
+const urlDisable = '@Url.Action("DisableChannels","PlaylistApi")';
+
+    function setEnabledForChannels(url, ids) {  
+      const options = {};  
+      options.url = url;  
+      options.type = "PUT";
+      options.data = JSON.stringify(ids);  
+      options.contentType = "application/json";  
+      options.dataType = "html";  
+      options.success = function (msg) {  
+        $("#msg").html(msg);  
+      };  
+      options.error = function () {  
+        $("#msg").html("Error while calling the Web API!");  
+      };  
+      $.ajax(options);  
+    }
 </script>
 </form>
 

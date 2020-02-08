@@ -33,22 +33,6 @@ namespace Tv7Playlist.Controllers
             return View(model);
         }
 
-        [HttpPost]
-        public async Task<IActionResult> DisableSelectedEntries([FromForm] HomeModel model)
-        {
-            if (ModelState.IsValid) await UpdateEnabledForItems(model, false);
-
-            return Redirect("/");
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> EnableSelectedEntries([FromForm] HomeModel model)
-        {
-            if (ModelState.IsValid) await UpdateEnabledForItems(model, true);
-
-            return Redirect("/");
-        }
-
         [HttpGet]
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
@@ -75,19 +59,6 @@ namespace Tv7Playlist.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        private async Task UpdateEnabledForItems(HomeModel model, bool isEnabled)
-        {
-            if (model == null) throw new ArgumentNullException(nameof(model));
-            var idsToUpdate = model.PlaylistEntries.Where(e => e.Selected).Select(e => e.Id);
-            foreach (var id in idsToUpdate)
-            {
-                var entry = await _playlistContext.PlaylistEntries.FindAsync(id);
-                if (entry == null) continue;
-
-                entry.IsEnabled = isEnabled;
-            }
-
-            await _playlistContext.SaveChangesAsync();
-        }
+       
     }
 }
