@@ -1,18 +1,9 @@
-﻿@using Microsoft.AspNetCore.Mvc.Routing
-@model HomeModel;
+﻿@model HomeModel;
 @{
     ViewData["Title"] = "TV7 Playlist";
 }
 
 <form method="post">
-    
-    @* <div class="row"> *@
-    @*     <div class="col col-4"> *@
-    @*         <button class="btn btn-warning" asp-action="DisableSelectedEntries" asp-controller="Home">Disable selected</button> *@
-    @*         <button class="btn btn-info" asp-action="EnableSelectedEntries" asp-controller="Home">Enable selected</button> *@
-    @*     </div> *@
-    @* </div> *@
-
     <div class="row">
         <div class="col col-12">
             <table class="table table-hover table-striped" id="playlistTable">
@@ -20,7 +11,6 @@
                 <tr>
                     <th></th>
                     <th></th>
-                    <th>Single Action</th>
                     <th>Number Import</th>
                     <th>Number Export</th>
                     <th>Position</th>
@@ -35,48 +25,82 @@
                 </tr>
                 </thead>
                 <tbody>
-                @{
-                    for (var i = 0; i < Model.PlaylistEntries.Count; i++)
-                    {
-                        <tr>
-                            <td></td>
-                            <td>@Model.PlaylistEntries[i].Id</td>
-                            <td>
-                                <a class="btn btn-secondary" asp-area="" asp-controller="PlaylistEntry" asp-action="Edit" asp-route-id="@Model.PlaylistEntries[i].Id">Edit</a>
-                                <a class="btn btn-danger" asp-area="" asp-controller="PlaylistEntry" asp-action="Delete" asp-route-id="@Model.PlaylistEntries[i].Id">Delete</a>
-                                @{
-                                    if (Model.PlaylistEntries[i].Entry.IsEnabled)
-                                    {
-                                        <a class="btn btn-warning" asp-area="" asp-controller="PlaylistEntry" asp-action="ToggleEnabled" asp-route-id="@Model.PlaylistEntries[i].Id">Disable</a>
-                                    }
-                                    else
-                                    {
-                                        <a class="btn btn-info" asp-area="" asp-controller="PlaylistEntry" asp-action="ToggleEnabled" asp-route-id="@Model.PlaylistEntries[i].Id">Enable</a>
-                                    }
-                                }
-                            </td>
-                            <td>@Model.PlaylistEntries[i].Entry.ChannelNumberImport</td>
-                            <td>@Model.PlaylistEntries[i].Entry.ChannelNumberExport</td>
-                            <td>@Model.PlaylistEntries[i].Entry.Position</td>
-                            <td>@Model.PlaylistEntries[i].Entry.Name</td>
-                            <td>@Model.PlaylistEntries[i].Entry.EpgMatchName</td>
-                            <td class="text-center">@Html.Raw(Model.PlaylistEntries[i].Entry.IsEnabled ? "<span class=\"text-primary\">Enabled</span>" : "<span class=\"text-danger\">Disabled</span>")</td>
-                            <td class="text-center">@Html.Raw(Model.PlaylistEntries[i].Entry.IsAvailable ? "<span class=\"text-primary\">yes</span>" : "<span class=\"text-danger\">no</span>")</td>
-                            <td>@Model.PlaylistEntries[i].Entry.UrlProxy</td>
-                            <td>@Model.PlaylistEntries[i].Entry.UrlOriginal</td>
-                            <td>@Model.PlaylistEntries[i].Entry.Created.ToString("g")</td>
-                            <td>@Model.PlaylistEntries[i].Entry.Modified.ToString("g")</td>
-                        </tr>
-                    }
-                }
                 </tbody>
+                <tfoot>
+                    <th></th>
+                    <th></th>
+                    <th>Number Import</th>
+                    <th>Number Export</th>
+                    <th>Position</th>
+                    <th>Name</th>
+                    <th>EPG Name</th>
+                    <th>Enabled</th>
+                    <th>Available</th>
+                    <th>URL Proxy</th>
+                    <th>URL Original</th>
+                    <th>Created</th>
+                    <th>Modified</th>
+                </tfoot>
             </table>
         </div>
     </div>
-<script>
+    <script>
+const urlGet = '@Url.Action("GetAll", "ChannelApi")';
+const urlEnable = '@Url.Action("EnableChannels", "ChannelApi")';
+const urlDisable = '@Url.Action("DisableChannels", "ChannelApi")';
+const urlDelete = '@Url.Action("DeleteChannels", "ChannelApi")';
+const urlEdit = '@Url.Action("Edit", "PlaylistEntry")';
+
 $(document).ready(function() {
-    const table = $('#playlistTable').DataTable({
+    $('#playlistTable').DataTable({
+        "ajax": urlGet,
         dom: 'Bfrtip',
+        pageLength: 25,
+        columns: [  
+            {  
+                data: null,
+                render: function ( data, type, row ) {return null;}  
+            },  
+            {  
+                data: "id",  
+                name: "eq",  
+                visible: false,  
+                searchable: false  
+            },  
+            {  
+                data: "channelNumberImport",  
+            },
+            {  
+                data: "channelNumberExport",  
+            },
+            {  
+                data: "position",  
+            },
+            {  
+                data: "name",  
+            },
+            {  
+                data: "epgMatchName",  
+            },
+            {  
+                data: "isEnabled",  
+            },
+            {  
+                data: "isAvailable",  
+            },
+            {  
+                data: "urlProxy",  
+            },
+            {  
+                data: "urlOriginal",  
+            },
+            {  
+                data: "created",  
+            },
+            {  
+                data: "modified",  
+            }
+        ],  
         columnDefs: [
             {
                 orderable: false,
@@ -90,11 +114,11 @@ $(document).ready(function() {
             },
             {
                 orderable: false,
-                targets:   [2,10,11]
+                targets:   [0,1,9,10]
             },
             {
                 searchable: false,
-                targets:   [2,10,11,12,13]
+                targets:   [0,9,10,11,12]
             },
         ],
         select: {
@@ -102,78 +126,91 @@ $(document).ready(function() {
             selector: 'td:first-child'
         },
         buttons: [
+            'pageLength',
+            'selectAll',
+            'selectNone',
             {
-                text: 'Select all',
-                action: function () {
-                    table.rows().select();
-                }
-            },
-            {
-                text: 'Select none',
-                action: function () {
-                    table.rows().deselect();
-                }
-            },
-            {
+                extend: 'selected',
                 text: 'Disable selected',
+                enabled: false,
+                className: 'btn btn-warning',
                 action: function ( e, dt, node, config ) {
-                    const ids = $.map(table.rows('.selected').data(), function (item) {
-                        return item[1]
+                    const ids = $.map(dt.rows({ selected: true }).data(), function (item) {
+                        return item.id;
                     });
-                    setEnabledForChannels(urlDisable, ids);
+                    setEnabledForChannels(urlDisable, ids, dt);
                 },
-                enabled: false
             },
             {
+                extend: 'selected',
                 text: 'Enable selected',
+                enabled: false,
+                className: 'btn btn-info',
                 action: function ( e, dt, node, config ) {
-                    const ids = $.map(table.rows('.selected').data(), function (item) {
-                        return item[1]
+                    const ids = $.map(dt.rows({ selected: true }).data(), function (item) {
+                        return item.id;
                     });
-                    setEnabledForChannels(urlEnable, ids);
-
+                    setEnabledForChannels(urlEnable, ids, dt);
                 },
-                enabled: false
             },
             {
-             text: 'Delete selected',
-             action: function ( e, dt, node, config ) {
-                 const ids = $.map(table.rows('.selected').data(), function (item) {
-                     return item[1]
-                 });
-                 alert(JSON.stringify( ids ));
-             },
-             enabled: false
+                extend: 'selected',
+                text: 'Delete selected',
+                enabled: false,
+                className: 'btn btn-danger',
+                action: function ( e, dt, node, config ) {
+                    const ids = $.map(dt.rows({ selected: true }).data(), function (item) {
+                        return item.id;
+                    });
+                    if (confirm("Do you really want to delete the " + ids.length + " selected channel(s)?")) {
+                        deleteChannels(ids, dt);
+                    }
+                },
+            },
+            {
+                extend: 'selectedSingle',
+                text: 'Edit entry',
+                enabled: false,
+                className: 'btn btn-secondary',
+                action: function ( e, dt, node, config ) {
+                    const id = dt.rows({ selected: true}).data()[0].id;
+                    window.location.href = urlEdit + '/' +id;
+                },
             }
         ]
     });
-    
-    table.on( 'select deselect', function () {
-            const selectedRows = table.rows( { selected: true } ).count();
-            table.button( 2 ).enable( selectedRows > 0 );
-            table.button( 3 ).enable( selectedRows > 0 );
-            table.button( 4 ).enable( selectedRows > 0 );
-        } );
 });
 
-const urlEnable = '@Url.Action("EnableChannels","PlaylistApi")';
-const urlDisable = '@Url.Action("DisableChannels","PlaylistApi")';
+function setEnabledForChannels(url, ids, dataTable) {  
+    const options = {};  
+    options.url = url;  
+    options.type = "PUT";
+    options.data = JSON.stringify(ids);  
+    options.contentType = "application/json";  
+    options.dataType = "html";  
+    options.success = function (msg) {  
+        dataTable.ajax.reload();  
+    };  
+    options.error = function () {  
+        alert("Error while calling the Web API!");  
+    };  
+    $.ajax(options);  
+}
 
-    function setEnabledForChannels(url, ids) {  
-      const options = {};  
-      options.url = url;  
-      options.type = "PUT";
-      options.data = JSON.stringify(ids);  
-      options.contentType = "application/json";  
-      options.dataType = "html";  
-      options.success = function (msg) {  
-        $("#msg").html(msg);  
-      };  
-      options.error = function () {  
-        $("#msg").html("Error while calling the Web API!");  
-      };  
-      $.ajax(options);  
-    }
+function deleteChannels(ids, dataTable) {  
+    const options = {};  
+    options.url = urlDelete;  
+    options.type = "DELETE";
+    options.data = JSON.stringify(ids);  
+    options.contentType = "application/json";  
+    options.dataType = "html";  
+    options.success = function (msg) {  
+        dataTable.ajax.reload();  
+    };  
+    options.error = function () {  
+        alert("Error while calling the Web API!");  
+    };  
+    $.ajax(options);  
+}
 </script>
 </form>
-

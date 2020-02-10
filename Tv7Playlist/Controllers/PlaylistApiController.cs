@@ -1,11 +1,8 @@
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Tv7Playlist.Core;
-using Tv7Playlist.Data;
 
 namespace Tv7Playlist.Controllers
 {
@@ -19,14 +16,13 @@ namespace Tv7Playlist.Controllers
         private readonly ILogger<HomeController> _logger;
 
         private readonly IPlaylistBuilder _playlistBuilder;
-        private readonly PlaylistContext _playlistContext;
 
-        public PlaylistApiController(ILogger<HomeController> logger, IPlaylistBuilder playlistBuilder, IAppConfig appConfig, PlaylistContext playlistContext)
+        public PlaylistApiController(ILogger<HomeController> logger, IPlaylistBuilder playlistBuilder,
+            IAppConfig appConfig)
         {
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
             _playlistBuilder = playlistBuilder ?? throw new ArgumentNullException(nameof(playlistBuilder));
             _appConfig = appConfig ?? throw new ArgumentNullException(nameof(appConfig));
-            _playlistContext = playlistContext ?? throw new ArgumentNullException(nameof(playlistContext));
         }
 
         [HttpGet]
@@ -50,22 +46,6 @@ namespace Tv7Playlist.Controllers
             return await GetPlaylistInternal(true);
         }
 
-        [HttpPut]
-        [Route("disable")]
-        public async Task<IActionResult> DisableChannels([FromBody]ICollection<Guid> ids)
-        {
-            await UpdateEnabledForItems(ids, false);
-            return Ok();
-        }
-        
-        [HttpPut]
-        [Route("enable")]
-        public async Task<IActionResult> EnableChannels([FromBody]ICollection<Guid> ids)
-        {
-            await UpdateEnabledForItems(ids, true);
-            return Ok();
-        }
-        
         private async Task<IActionResult> GetPlaylistInternal(bool useProxy)
         {
             var playlistStream = await _playlistBuilder.GeneratePlaylistAsync(useProxy);
@@ -86,19 +66,6 @@ namespace Tv7Playlist.Controllers
             if (string.IsNullOrEmpty(downloadFileName)) downloadFileName = "playlist.m3u";
 
             return downloadFileName;
-        }
-        
-        private async Task UpdateEnabledForItems(IEnumerable<Guid> ids, bool isEnabled)
-        {
-            foreach (var id in ids)
-            {
-                var entry = await _playlistContext.PlaylistEntries.FindAsync(id);
-                if (entry == null) continue;
-
-                entry.IsEnabled = isEnabled;
-            }
-
-            await _playlistContext.SaveChangesAsync();
         }
     }
 }

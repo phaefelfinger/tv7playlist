@@ -29,7 +29,6 @@ namespace Tv7Playlist.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(Guid id, PlaylistEntry updatedEntry)
-            //[Bind("PlaylistEntry.Id,PlaylistEntry.Position,PlaylistEntry.TrackNumberOverride,PlaylistEntry.NameOverride,PlaylistEntry.IsEnabled")]
         {
             if (updatedEntry == null) return NotFound();
 
@@ -53,48 +52,6 @@ namespace Tv7Playlist.Controllers
             }
 
             return View(updatedEntry);
-        }
-
-        [HttpGet]
-        public async Task<IActionResult> ToggleEnabled(Guid? id)
-        {
-            var entry = await _playlistContext.PlaylistEntries.FindAsync(id);
-            if (entry == null) return NotFound();
-
-            entry.IsEnabled = !entry.IsEnabled;
-            
-            await _playlistContext.SaveChangesAsync();
-
-            return RedirectToAction("Index", "Home");
-        }
-
-        [HttpGet]
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public async Task<IActionResult> Delete(Guid? id)
-        {
-            if (id == null) return NotFound();
-
-            var entry = await _playlistContext.PlaylistEntries.FindAsync(id);
-            if (entry == null) return NotFound();
-
-            return View(entry);
-        }
-
-        [HttpPost]
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(Guid? id)
-        {
-            if (id == null) return NotFound();
-
-            var entry = await _playlistContext.PlaylistEntries.FindAsync(id);
-            if (entry == null) return NotFound();
-
-            _playlistContext.PlaylistEntries.Remove(entry);
-
-            await _playlistContext.SaveChangesAsync();
-
-            return RedirectToAction("Index", "Home");
         }
     }
 }
