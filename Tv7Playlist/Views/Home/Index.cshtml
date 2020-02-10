@@ -83,10 +83,26 @@ $(document).ready(function() {
                 data: "epgMatchName",  
             },
             {  
-                data: "isEnabled",  
+                data: "isEnabled",
+                searchable: false,  
+                render: function ( data, type, row, meta ) {
+                    if (data) {
+                        return '<span class="text-primary">Enabled</span>'
+                    } else {
+                        return '<span class="text-danger">Disabled</span>'
+                    }
+                }  
             },
             {  
                 data: "isAvailable",  
+                searchable: false,  
+                render: function ( data, type, row, meta ) {
+                    if (data) {
+                        return '<span class="text-primary">yes</span>'
+                    } else {
+                        return '<span class="text-danger">no</span>'
+                    }
+                }  
             },
             {  
                 data: "urlProxy",  
@@ -96,9 +112,17 @@ $(document).ready(function() {
             },
             {  
                 data: "created",  
+                searchable: false,  
+                render: function ( data, type, row, meta ) {
+                    return moment(data).format('YYYY-MM-DD HH:mm');
+                }  
             },
             {  
                 data: "modified",  
+                searchable: false,  
+                render: function ( data, type, row, meta ) {
+                    return moment(data).format('YYYY-MM-DD HH:mm');
+                }  
             }
         ],  
         columnDefs: [
