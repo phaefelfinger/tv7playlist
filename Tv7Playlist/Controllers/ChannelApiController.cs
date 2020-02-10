@@ -87,6 +87,7 @@ namespace Tv7Playlist.Controllers
 
                 _logger.LogInformation($"Setting enabled of channel {id} - {entry.Name} to {isEnabled}");
                 entry.IsEnabled = isEnabled;
+                entry.Modified = DateTime.Now;
             }
 
             await _playlistContext.SaveChangesAsync();
