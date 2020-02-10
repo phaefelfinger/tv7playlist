@@ -8,8 +8,8 @@ steps:
       repo: phaefelfinger/tv7playlist
       tags:
         - latest
-        - '3.0'
-        - '3.0.0'
+        - '3.1'
+        - '3.1.0'
       username:
         from_secret: docker_username
       password:
